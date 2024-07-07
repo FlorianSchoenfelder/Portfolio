@@ -1,0 +1,16 @@
+<section id="navigation" class="header">
+    <img *ngIf="!burgerButton" src="./../../../assets/img/logo.png" alt="MY_LOGO">
+    <img *ngIf="burgerButton" src="./../../../assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE">
+    <div class="links">
+        <a href="#">About me</a>
+        <a href="#">Skill set</a>
+        <a href="#">My work</a>
+
+    </div>
+    <div (click)="toggleBurgerMenu()" #btn id="burger" class="btn not-active">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>
+<app-mobile-navigation class="mobile-nav"></app-mobile-navigation>
