@@ -20,7 +20,7 @@ export class HeaderComponent {
   constructor() {}
   
   ngOnInit(): void {
-    // gsap.from("#navigation", {delay: 3, duration: 1.5, y: -150, opacity: 0})
+    gsap.from("#navigation", {delay: 3, duration: 1.5, y: -150, opacity: 0})
     
   }
 
@@ -34,12 +34,15 @@ toggleBurgerMenu() {
     console.log(this.burgerButton);
     console.log(this.menuOut);
   } else {
-    this.burgerButton = false;
+    
     this.menuOut = true;
     console.log(this.burgerButton);
     console.log(this.menuOut);
     btn.classList.remove('active');
     btn.classList.add('not-active');
+    setTimeout(() => {
+      this.burgerButton = false;
+    }, 500);
   }
   
   
