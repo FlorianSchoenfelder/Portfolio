@@ -1,6 +1,6 @@
 <section id="navigation" class="header">
-    <img *ngIf="!burgerButton" src="./../../../assets/img/logo.png" alt="MY_LOGO">
-    <img *ngIf="burgerButton" src="./../../../assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE">
+    <img *ngIf="!burgerButton" src="./assets/img/logo.png" alt="MY_LOGO">
+    <img *ngIf="burgerButton" src="./assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE">
     <div class="links">
         <a href="#">About me</a>
         <a href="#">Skill set</a>
@@ -13,4 +13,6 @@
         <span></span>
     </div>
 </section>
-<app-mobile-navigation class="mobile-nav"></app-mobile-navigation>
+<app-mobile-navigation *ngIf="burgerButton" [ngClass]="{'animate__fadeInRight': burgerButton, 'animate__fadeOutRight': !burgerButton}" class="mobile-nav"></app-mobile-navigation>
+
+

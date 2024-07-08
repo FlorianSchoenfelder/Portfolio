@@ -25,6 +25,10 @@ $blue-color: #5988ff;
   }
 }
 
+.d-none {
+  display: none !important;
+}
+
 
 @media (max-width: 720px) {
   .header {
@@ -65,8 +69,14 @@ $blue-color: #5988ff;
     width: 100%;
     background: linear-gradient(179.99deg, rgba(255, 255, 255, 0.89) 12.89%, rgba(234, 240, 255, 0.863) 91.39%);
     z-index: 9;
+    animation: fadeInRight;
+    animation-duration: 1s;
 }
 
+// .menu-out {
+//   animation: fadeOutRight;
+//   animation-duration: 1s;
+// }
 
 
 
