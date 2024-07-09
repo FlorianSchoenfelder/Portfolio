@@ -1,10 +1,10 @@
 <section id="navigation" class="header">
-    <img class="main-logo" *ngIf="!burgerButton" src="./assets/img/logo.png" alt="MY_LOGO">
+    <img *ngIf="mainLogo" class="main-logo"  [ngClass]="{'animate__fadeOut': burgerButton, 'animate__fadeIn': menuOut}" src="./assets/img/logo.png" alt="MY_LOGO">
     <!-- <img *ngIf="burgerButton" src="./assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE"> -->
     <div class="links">
-        <a href="#">About me</a>
-        <a href="#">Skill set</a>
-        <a href="#">My work</a>
+        <a href="#about-me">About me</a>
+        <a href="#skill">Skill set</a>
+        <a href="#projects">My work</a>
 
     </div>
     <div (click)="toggleBurgerMenu()" #btn id="burger" class="btn not-active">

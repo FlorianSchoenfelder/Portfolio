@@ -15,40 +15,41 @@ import { log } from 'console';
 export class HeaderComponent {
   @ViewChild('btn') btnElement!: ElementRef;
 
-  burgerButton:boolean = false;
-  menuOut:boolean = false;
-  constructor() {}
-  
+  burgerButton: boolean = false;
+  menuOut: boolean = false;
+  mainLogo: boolean = true;
+  constructor() { }
+
   ngOnInit(): void {
-    gsap.from("#navigation", {delay: 3, duration: 1.5, y: -150, opacity: 0})
-    
+    gsap.from("#navigation", { delay: 1.5, duration: 1.5, y: -150, opacity: 0 })
+
   }
 
-toggleBurgerMenu() {
-  const btn = this.btnElement.nativeElement;
-  if (btn.classList.contains('not-active')) {
-    btn.classList.remove('not-active');
-    btn.classList.add('active');
-    this.burgerButton = true;
-    this.menuOut = false;
-    console.log(this.burgerButton);
-    console.log(this.menuOut);
-  } else {
-    
-    this.menuOut = true;
-    console.log(this.burgerButton);
-    console.log(this.menuOut);
-    btn.classList.remove('active');
-    btn.classList.add('not-active');
-    setTimeout(() => {
-      this.burgerButton = false;
-    }, 500);
+  toggleBurgerMenu() {
+    const btn = this.btnElement.nativeElement;
+    if (btn.classList.contains('not-active')) {
+      btn.classList.remove('not-active');
+      btn.classList.add('active');
+      this.burgerButton = true;
+      this.menuOut = false;
+      setTimeout(() => {
+        this.mainLogo = false;
+      }, 1000);
+
+
+    } else {
+      this.menuOut = true;
+      btn.classList.remove('active');
+      btn.classList.add('not-active');
+      setTimeout(() => {
+        this.burgerButton = false;
+        this.mainLogo = true;
+
+      }, 350);
+    }
   }
-  
-  
-}
 
 
- 
+
 
 }

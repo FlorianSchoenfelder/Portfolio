@@ -61,24 +61,26 @@ $blue-color: #5988ff;
   }
 
   .main-logo {
-    animation-duration: 3s;
+    animation-duration: 2s;
+    animation-direction: forwards;
   }
 
   .mobile-nav {
     margin: 0;
     padding: 0;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     left: 0;
+    bottom: 0;
     right: 0;
     height: 100dvh;
     width: 100%;
     background: linear-gradient(179.99deg, rgba(255, 255, 255, 0.89) 12.89%, rgba(234, 240, 255, 0.863) 91.39%);
     z-index: 9;
     // animation: fadeInRight;
-    animation-duration: 1s;
+    animation-duration: 500ms;
 }
 
 // .menu-out {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { gsap } from "gsap";
 
 @Component({
   selector: 'app-about-me-section',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AboutMeSectionComponent {
 
+
+  ngOnInit(): void {
+    // gsap.from("#work-together", { delay: 1.5, duration: 1.5, y: -150, opacity: 0 })
+
+  }
 }

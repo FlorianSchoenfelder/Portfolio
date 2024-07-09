@@ -41,8 +41,8 @@ export class AotSectionComponent {
         text: "DEVELOPER",
         ease: "none",
       });
-      }, 1500);
-    }, 1500);
+      }, 1000);
+    }, 1000);
   }
 
 }
