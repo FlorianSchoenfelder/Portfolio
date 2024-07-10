@@ -200,7 +200,15 @@ $blue-color: #5988ff;
     line-height: 48px !important;
   }
   .image-of-myself {
-    height: 550px !important;
+    height: 500px !important;
+    right: 0;
+    left: 0;
+    width: 300px;
+  }
+  .aot-bottom-centered-ball {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
   }
 }
 

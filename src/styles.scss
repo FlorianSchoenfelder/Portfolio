@@ -12,6 +12,19 @@ span,p,a {
   font-family: 'Montserrat';
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5988FF;
+  border-radius: 8px;
+}
+
 
 /* montserrat-regular - latin */
 @font-face {

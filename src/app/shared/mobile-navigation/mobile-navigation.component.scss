@@ -1,9 +1,9 @@
 .mobile-nav-img {
   position: absolute;
   left: 110px;
-    top: 24px;
-    z-index: 55;
-    display: flex;
+  top: 24px;
+  z-index: 55;
+  display: flex;
 }
 
 ul {
@@ -21,6 +21,25 @@ ul {
         scale: 1.1;
         font-weight: bold;
       }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .mobile-nav-img {
+    left: 46px;
+    top: 37px;
+  }
+}
+
+@media (max-width: 545px) {
+}
+
+@media (max-width: 396px) {
+  ul {
+    width: 180px;
+    li a {
+      font-size: 32px;
     }
   }
 }
