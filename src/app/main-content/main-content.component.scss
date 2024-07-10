@@ -1,5 +1,12 @@
 app-about-me-section {
     display: flex;
-    padding: 192px 0px 128px 0px;
+    padding: 192px 64px 128px 64px;
     position: relative;
+}
+
+app-my-projects-section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 32px 64px;
 }
