@@ -201,8 +201,9 @@ $blue-color: #5988ff;
   }
   .image-of-myself {
     height: 500px !important;
-    right: 0;
-    left: 0;
+    // right: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
     width: 300px;
   }
   .aot-bottom-centered-ball {

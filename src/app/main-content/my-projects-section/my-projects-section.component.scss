@@ -23,7 +23,7 @@ $blue-color: #5988ff;
   align-items: end;
   height: fit-content;
   // border: 1px solid;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   padding: 16px 0px;
   // gap: 88px;
   img {
@@ -158,5 +158,104 @@ $blue-color: #5988ff;
 
   .blue-ball:nth-child(1) {
     left: 30%;
+  }
+}
+
+@media (max-width: 1330px) {
+  .ball1 {
+    left: unset !important;
+    right: 30% !important;
+  }
+  .ball2 {
+    top: 230px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .ball4 {
+    height: 432px !important;
+    width: 432px !important;
+    right: -172px !important;
+  }
+}
+
+@media (max-width: 930px) {
+  .ball1 {
+    left: unset !important;
+    right: 15% !important;
+    // width: 40px !important;
+    // height: 40px !important;
+    top: 20px;
+  }
+  .ball2 {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .ball3 {
+    top: 380px !important;
+    width: 300px !important;
+    height: 300px !important;
+    left: -150px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .headline h1 {
+    font-size: 64px;
+    padding-top: 64px;
+  }
+  .myWorkBoxes {
+    img {
+      width: 100%;
+    }
+    .myWorkDescription {
+      width: 100%;
+    }
+    
+  }
+  .ball1 {
+    width: 60px !important;
+    right: 25% !important;
+    height: 60px !important;
+  }
+  .ball2 {
+    top: 280px !important;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .ball4 {
+    width: 250px !important;
+    height: 250px !important;
+    right: -80px !important;
+  }
+}
+
+@media (max-width: 490px) {
+  .ball3 {
+    width: 220px !important;
+    height: 220px !important;
+    left: -110px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .myWorkBoxes{
+  .myWorkDescription {
+    height: 320px;
+  }
+}
+  .buttonFrame {
+    gap: 16px;
+    button {
+      width: 200px;
+    font-size: 18px;
+    padding: 15px 20px;
+    }
+    
+  }
+  .ball4 {
+    top: 900px !important;
   }
 }

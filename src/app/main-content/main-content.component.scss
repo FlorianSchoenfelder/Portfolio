@@ -12,3 +12,15 @@ app-my-projects-section {
     overflow: hidden;
 }
 
+@media (max-width: 1000px) {
+    app-my-projects-section {
+        padding: 32px 64px;
+    }
+}
+
+@media (max-width: 750px) {
+    app-my-projects-section {
+        padding: 32px 32px;
+    }
+}
+
