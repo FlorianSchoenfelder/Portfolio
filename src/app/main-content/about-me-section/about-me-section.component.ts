@@ -28,15 +28,14 @@ export class AboutMeSectionComponent {
       opacity: 0,
       duration: 1
     });
-
-
-
-
-
-
   }
 
-
+  scrollTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
 
 

@@ -29,10 +29,8 @@ section {
       padding: 15px 30px;
       border-radius: 10px;
       transition: all 100ms;
-      a{
-        text-decoration: none;
-        font-size: 23px;
-      }
+      font-size: 23px;
+      color: #5988ff;
       &:hover {
         border: 4px solid #5988ff;
         font-weight: 600;

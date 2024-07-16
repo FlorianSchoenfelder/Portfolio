@@ -16,13 +16,14 @@ section {
     font-size: 96px;
   }
   div {
-    width: 957px;
+    // width: 957px;
     // border: 2px solid greenyellow;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 50px;
-    grid-row-gap: 28px;
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+    place-items: center;
     // gap: 100px;
     // flex-wrap: wrap;
     padding: 24px 8px;
@@ -31,10 +32,28 @@ section {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      transition: all 125ms;
     //   border: 1px solid;
       color: white;
-      width: auto;
+      height: 110px;
+      width: fit-content;
       gap: 10px;
+      &:hover {
+        transition: all 125ms;
+        cursor: pointer;
+        img {
+          transform: translateY(-10px);
+          cursor: pointer;
+          transition: all 125ms ease-in-out; // Füge eine sanfte Übergangsanimation hinzu
+      }
+      
+      p {
+          // transform: scale(1.05);
+          cursor: pointer;
+          font-weight: 700;
+          transition: all 125ms ease-in-out; // Füge eine sanfte Übergangsanimation hinzu
+      }
+      }
       // max-height: 105px;
       p {
         color: white !important;
