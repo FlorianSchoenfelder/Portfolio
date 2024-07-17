@@ -1,0 +1,124 @@
+footer {
+  background: radial-gradient(
+      71.18% 335.57% at 28.82% -124.4%,
+      #5988ff 6.25%,
+      #5988ff 51.56%,
+      #0043f0 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0px 64px;
+  img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .socials {
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 42px;
+    img {
+      width: 24px;
+      height: 24px;
+      &:hover {
+        transition: all 200ms ease-in-out;
+        scale: 1.6;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 12px;
+  .imprint {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      font-weight: 700;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 132px;
+      width: 0%;
+      height: 2px;
+      opacity: 0;
+      background-color: white;
+      transition: all 200ms;
+    }
+    &:hover::before {
+      left: 146px;
+      width: 13%;
+      opacity: 1;
+    }
+  }
+  span {
+    color: white;
+    font-size: 23px;
+  }
+}
+
+.imprintMobile {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  footer {
+    padding: 0px 32px;
+  }
+}
+
+@media (max-width: 1000px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+  .me {
+    text-align: center;
+    .imprint {
+      display: none;
+    }
+  }
+  .imprintMobile {
+    display: block;
+
+    position: relative;
+    a {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        font-weight: 700;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: -20px;
+        width: 15%;
+        height: 2px;
+        opacity: 0;
+        background-color: white;
+        transition: all 200ms;
+      }
+      &:hover::before {
+        left: 25%;
+        width: 50%;
+        opacity: 1;
+      }
+    }
+  }
+}

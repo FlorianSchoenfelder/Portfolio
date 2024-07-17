@@ -9,7 +9,15 @@ app-my-projects-section {
     position: relative;
     flex-direction: column;
     padding: 32px 160px;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+app-contact-section {
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+    background: linear-gradient(179.99deg, #ffffff 12.89%, #eaf0ff 91.39%);
+
 }
 
 @media (max-width: 1000px) {
@@ -21,6 +29,9 @@ app-my-projects-section {
 @media (max-width: 750px) {
     app-my-projects-section {
         padding: 32px 32px;
+    }
+    app-about-me-section {
+        padding: 192px 32px 128px 32px;
     }
 }
 

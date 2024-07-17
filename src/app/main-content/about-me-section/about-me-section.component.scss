@@ -20,8 +20,9 @@ section {
     font-size: 23px;
     line-height: 27.6px;
     position: relative;
+    height: 320px;
     button {
-      position: absolute;
+      position: relative;
       left: 50%;
       transform: translate(-50%, 0%);
       border: 2px solid #5988ff;
@@ -31,9 +32,35 @@ section {
       transition: all 100ms;
       font-size: 23px;
       color: #5988ff;
+      isolation: isolate;
+      overflow: hidden;
+      span {
+        position: absolute;
+        z-index: -1;
+        width: 120%;
+        height: 250px;
+        background: radial-gradient(
+            74.22% 74.22% at 19.79% 22.42%,
+            #5988ff 6.25%,
+            #5988ff 51.56%,
+            #0043f0 100%
+          )
+          /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        left: -125%;
+        top: -130px;
+        // opacity: 0.5;
+        transition: all 300ms;
+        rotate: 20deg;
+      }
       &:hover {
         border: 4px solid #5988ff;
-        font-weight: 600;
+        // font-weight: 600;
+        color: white;
+        scale: 1.1;
+        border: none;
+        span {
+          left: 0;
+        }
       }
     }
   }
@@ -67,14 +94,23 @@ section {
   }
 }
 
+@media (max-width: 750px) {
+  section {
+    padding: unset !important;
+  }
+}
+
 @media (max-width: 660px) {
   .about-me-text button {
     width: 242px;
     padding: 13px 24px !important;
     height: 54px;
-    a{
+    a {
       width: 194px !important;
     }
+  }
+  .about-me-text {
+    height: unset !important;
   }
 }
 

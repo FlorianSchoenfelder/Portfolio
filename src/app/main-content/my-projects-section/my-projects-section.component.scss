@@ -22,14 +22,10 @@ $blue-color: #5988ff;
   justify-content: space-between;
   align-items: end;
   height: fit-content;
-  // border: 1px solid;
   margin-bottom: 100px;
   padding: 16px 0px;
-  // gap: 88px;
   img {
     width: 720px;
-    // height: 460px;
-    // object-fit: contain;
     object-position: center;
     transition: all 250ms;
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
@@ -40,7 +36,6 @@ $blue-color: #5988ff;
     }
   }
   .myWorkDescription {
-    // border: 2px solid green;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -72,10 +67,9 @@ $blue-color: #5988ff;
       text-align: right;
     }
     .buttonFrame {
-    justify-content: end;
+      justify-content: end;
+    }
   }
-  }
-  
 }
 
 .buttonFrame {
@@ -85,6 +79,16 @@ $blue-color: #5988ff;
   height: 65px;
   width: 100%;
   gap: 32px;
+  :first-child {
+    color: white;
+    border: none;
+    background: radial-gradient(
+        74.22% 74.22% at 19.79% 22.42%,
+        #5988ff 6.25%,
+        #5988ff 51.56%,
+        #0043f0 100%
+      )
+  }
   button {
     width: 155px;
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
@@ -95,9 +99,33 @@ $blue-color: #5988ff;
     border-radius: 10px;
     transition: all 100ms;
     color: #5988ff;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    span {
+      position: absolute;
+      z-index: -1;
+      width: 140%;
+      height: 180px;
+      background: radial-gradient(
+          74.22% 74.22% at 19.79% 22.42%,
+          #5988ff 6.25%,
+          #5988ff 51.56%,
+          #0043f0 100%
+        );
+      left: -160%;
+      top: -80px;
+      transition: all 300ms;
+      rotate: 20deg;
+    }
     &:hover {
       cursor: pointer;
       scale: 1.2;
+      color: white;
+      border: none;
+      span {
+        left: 0;
+      }
     }
   }
 }
@@ -151,8 +179,8 @@ $blue-color: #5988ff;
         text-align: center;
       }
       .buttonFrame {
-      justify-content: center;
-    }
+        justify-content: center;
+      }
     }
   }
 
@@ -183,8 +211,6 @@ $blue-color: #5988ff;
   .ball1 {
     left: unset !important;
     right: 15% !important;
-    // width: 40px !important;
-    // height: 40px !important;
     top: 20px;
   }
   .ball2 {
@@ -196,6 +222,9 @@ $blue-color: #5988ff;
     width: 300px !important;
     height: 300px !important;
     left: -150px !important;
+  }
+  .ball5 {
+    left: 20px !important;
   }
 }
 
@@ -211,7 +240,6 @@ $blue-color: #5988ff;
     .myWorkDescription {
       width: 100%;
     }
-    
   }
   .ball1 {
     width: 60px !important;
@@ -221,7 +249,10 @@ $blue-color: #5988ff;
   .ball2 {
     top: 280px !important;
   }
-
+  .ball5 {
+    top: 1550px !important;
+    left: 2px !important;
+  }
 }
 
 @media (max-width: 550px) {
@@ -238,22 +269,23 @@ $blue-color: #5988ff;
     height: 220px !important;
     left: -110px !important;
   }
+  .buttonFrame button {
+    padding: 15px;
+  }
 }
 
 @media (max-width: 400px) {
-  .myWorkBoxes{
-  .myWorkDescription {
-    height: 320px;
+  .myWorkBoxes {
+    .myWorkDescription {
+      height: 320px;
+    }
   }
-}
   .buttonFrame {
     gap: 16px;
     button {
       width: 200px;
-    font-size: 18px;
-    padding: 15px 20px;
+      font-size: 18px;
     }
-    
   }
   .ball4 {
     top: 900px !important;
