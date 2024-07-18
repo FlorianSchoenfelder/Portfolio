@@ -15,6 +15,7 @@ $blue-color: #5988ff;
       display: flex;
       position: absolute;
       bottom: 0;
+      left: 150px;
     }
   }
 }
@@ -154,8 +155,9 @@ $blue-color: #5988ff;
     justify-content: center;
   }
   .image-of-myself {
-    height: 600px !important;
-    right: 200px;
+    height: 750px !important;
+    right: 180px;
+    left: unset !important;
   }
 }
 
@@ -164,18 +166,21 @@ $blue-color: #5988ff;
     line-height: 20px !important;
     height: 70px !important;
   }
-}
-
-@media (max-width: 900px) {
   .image-of-myself {
+    height: 600px !important;
+    left: unset !important;
     right: unset;
   }
 }
 
+// @media (max-width: 900px) {
+//   .image-of-myself {
+//     // right: unset;
+//   }
+// }
+
 @media (max-width: 720px) {
   .left-top-ball {
-    // width: 100%;
-    // height: 100%;
     top: -100px;
     left: unset;
     right: 5%;
@@ -200,11 +205,10 @@ $blue-color: #5988ff;
     line-height: 48px !important;
   }
   .image-of-myself {
-    height: 500px !important;
-    // right: 0;
-    left: 50%;
+    left: 50% !important;
     transform: translate(-50%, 0%);
-    width: 300px;
+    width: 100%;
+    max-width: 450px !important;
   }
   .aot-bottom-centered-ball {
     width: 150px;
@@ -217,5 +221,9 @@ $blue-color: #5988ff;
   .greeting-myself div span {
     font-size: 40px !important;
     height: 48px !important;
+  }
+
+  .image-of-myself {
+    height: 500px !important;
   }
 }

@@ -10,8 +10,8 @@
         <p>{{ item.languages }}</p>
         <span>{{ item.description }}</span>
         <div class="buttonFrame">
-            <button>Live Test</button>
-            <button>
+            <button (click)="openProject(item.link)">Live Test</button>
+            <button (click)="openGithub(item.github)">
                 <span></span>
                 Github
             </button>

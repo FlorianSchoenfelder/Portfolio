@@ -8,17 +8,28 @@
             <span>Need a Frontend developer? <b>Contact me!</b></span>
         </div>
         <div class="rightContent">
-            <form onsubmit="sendMessage(); return false;">
-                <input type="text" placeholder="Your name">
-                <input type="email" placeholder="Your email">
-                <textarea name="textfield" id="textfield" placeholder="Your message"></textarea>
+            <form (ngSubmit)="sendMessage()">
+                <div>
+                    <input [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" id="name" type="text">
+                    <label for="name">Your name</label>
+                </div>
+                <div>
+                    <input [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email">
+                    <label for="email">Your email</label>
+                </div>
+                <div>
+                    <textarea [(ngModel)]="contactData.message" [ngModelOptions]="{standalone: true}" id="message" name="textfield" id="textfield"></textarea>
+                        <label for="message">Your message</label>
+
+                </div>
+
                 <div class="privacyAndButton">
                     <div>
                         <input type="checkbox" name="checkbox" id="checkbox">
                         <span>I´ve read the privacy policy and agree to the processing of my data as outlined</span>
                     </div>
 
-                    <button disabled="true">Say hello!</button>
+                    <button>Say hello!</button>
                 </div>
 
             </form>
@@ -28,6 +39,6 @@
 
 </section>
 
-<img class="blue-ball1" src="./../../../assets/img/blue-ball.png">
-<img class="blue-ball2" src="./../../../assets/img/blue-ball.png">
-<img class="blue-ball3" src="./../../../assets/img/blue-ball.png">
+<img class="blue-ball1" src="./assets/img/blue-ball.png">
+<img class="blue-ball2" src="./assets/img/blue-ball.png">
+<img class="blue-ball3" src="./assets/img/blue-ball.png">

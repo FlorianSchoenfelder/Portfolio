@@ -22,24 +22,24 @@ export class MyProjectsSectionComponent {
       img: 'join.png',
       languages: 'JavaScript | HTML | CSS',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      link: '',
-      github: '',
+      link: 'https://join.florian-schoenfelder.de/assets/templates/index.html',
+      github: 'https://github.com/FlorianSchoenfelder/Join.git',
     },
     {
       title: 'Pollo Loco',
       img: 'polloloco.png',
       languages: 'JavaScript | HTML | CSS',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      link: '',
-      github: '',
+      link: 'https://el-pollo-loco.florian-schoenfelder.de/index.html',
+      github: 'https://github.com/FlorianSchoenfelder/El_Pollo_Loco.git',
     },
     {
       title: 'Pokedex',
       img: 'pokedex.png',
       languages: 'JavaScript | HTML | CSS | Api',
       description: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
-      link: '',
-      github: '',
+      link: 'https://pokedex.florian-schoenfelder.de/index.html',
+      github: 'https://github.com/FlorianSchoenfelder/Pokedex.git',
     },
   ]
   
@@ -56,6 +56,14 @@ export class MyProjectsSectionComponent {
       opacity: 0,
       duration: 1
     });
+  }
+
+  openGithub(link: string) {
+    window.open(link, "_blank");
+  }
+
+  openProject(project: string) {
+    window.open(project, "_blank");
   }
 }
 
