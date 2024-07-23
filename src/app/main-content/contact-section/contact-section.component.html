@@ -12,32 +12,32 @@
                 <div>
                     <input #name="ngModel" [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" id="name" type="text" required>
                     <label *ngIf="!(name.touched && name.valid)" for="name">Your name</label>
-                    <img *ngIf="name.touched && name.valid" class="alertInTextField" src="./../../../assets/img/success.png">
+                    <img *ngIf="name.touched && name.valid" class="alertInTextField" src="./assets/img/success.png">
                     
                     @if (!name.valid && name.touched) {
                         <span [ngStyle]="{'color': 'red'}">Your name is required</span>
-                        <img class="alertInTextField" src="./../../../assets/img/alert.png">
+                        <img class="alertInTextField" src="./assets/img/alert.png">
 
                     }
                 </div>
                 <div>
                     <input #email="ngModel" [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                     <label *ngIf="!(email.touched && email.valid)" for="email">Your email</label>
-                    <img *ngIf="email.touched && email.valid" class="alertInTextField" src="./../../../assets/img/success.png">
+                    <img *ngIf="email.touched && email.valid" class="alertInTextField" src="./assets/img/success.png">
 
                     @if (!email.valid && email.touched) {
                         <span [ngStyle]="{'color': 'red'}">Your email is required</span>
-                        <img class="alertInTextField" src="./../../../assets/img/alert.png">
+                        <img class="alertInTextField" src="./assets/img/alert.png">
                     }
                 </div>
                 <div>
                     <textarea #message="ngModel" minlength="" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
                         <label *ngIf="!(message.touched && message.valid)" for="message">Your message</label>
-                        <img *ngIf="message.touched && message.valid" class="alertInTextField" src="./../../../assets/img/success.png">
+                        <img *ngIf="message.touched && message.valid" class="alertInTextField" src="./assets/img/success.png">
 
                         @if (!message.valid && message.touched) {
                             <span [ngStyle]="{'color': 'red'}">Your message is empty</span>
-                            <img class="alertInTextField" src="./../../../assets/img/alert.png">
+                            <img class="alertInTextField" src="./assets/img/alert.png">
                         }
 
                 </div>

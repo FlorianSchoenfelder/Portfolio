@@ -23,7 +23,7 @@ export class ContactSectionComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://florian.schoenfelder.de/sendMail.php',
+    endPoint: 'https://florian-schoenfelder.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
