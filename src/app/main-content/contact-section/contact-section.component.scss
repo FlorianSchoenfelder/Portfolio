@@ -111,12 +111,20 @@ section {
   }
 }
 
+.labelTransform {
+  transform: translateY(-25px);
+}
+
+.d-block {
+  display: block !important;
+}
+
 
 .privacyAndButton {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 36px;
   div {
     display: flex;
     justify-content: space-between;
@@ -136,6 +144,9 @@ section {
     gap: 10px;
     font-size: 23px;
     line-height: 27.6px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -172,6 +183,28 @@ section {
   position: absolute;
   top: 12px;
   right: 24px;
+}
+
+.toTheTop {
+  background-image: url(./../../../assets/img/backtoTop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  // border: 1px solid;
+  border-radius: 50%;
+  transition: all 200ms;
+  cursor: pointer;
+  &:hover {
+    background-image: url(./../../../assets/img/backToTopHover.png);
+  }
+}
+
+.privacyText {
+  position: absolute;
+  top: 55px;
+  left: 0;
 }
 
 @media (max-width: 1300px) {

@@ -10,49 +10,46 @@
         <div class="rightContent">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div>
-                    <input #name="ngModel" [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" id="name" type="text" required>
-                    <label *ngIf="!(name.touched && name.valid)" for="name">Your name</label>
-                    <img *ngIf="name.touched && name.valid" class="alertInTextField" src="./assets/img/success.png">
+                    <input #name="ngModel" [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" [minlength]="3" id="name" type="text" required>
+                    <label [class.labelTransform]="contactData.name" for="name">Your name</label>
+                    <img *ngIf="name.valid" class="alertInTextField" src="./assets/img/success.png">
                     
-                    @if (!name.valid && name.touched) {
-                        <span [ngStyle]="{'color': 'red'}">Your name is required</span>
-                        <img class="alertInTextField" src="./assets/img/alert.png">
-
-                    }
+                    <span [class.d-block]="contactData.name" *ngIf="name.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 3 letters</span>
+                    <img [class.d-block]="contactData.name" *ngIf="!name.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">                   
                 </div>
                 <div>
                     <input #email="ngModel" [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                    <label *ngIf="!(email.touched && email.valid)" for="email">Your email</label>
-                    <img *ngIf="email.touched && email.valid" class="alertInTextField" src="./assets/img/success.png">
+                    <label [class.labelTransform]="contactData.email" for="email">Your email</label>
+                    <img *ngIf="email.valid" class="alertInTextField" src="./assets/img/success.png">
 
-                    @if (!email.valid && email.touched) {
-                        <span [ngStyle]="{'color': 'red'}">Your email is required</span>
-                        <img class="alertInTextField" src="./assets/img/alert.png">
-                    }
+                    <span [class.d-block]="contactData.email" *ngIf="email.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">Your email is not valid</span>
+                    <img [class.d-block]="contactData.email" *ngIf="!email.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
                 </div>
                 <div>
-                    <textarea #message="ngModel" minlength="" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
-                        <label *ngIf="!(message.touched && message.valid)" for="message">Your message</label>
-                        <img *ngIf="message.touched && message.valid" class="alertInTextField" src="./assets/img/success.png">
+                    <textarea #message="ngModel" [minlength]="8" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
+                        <label [class.labelTransform]="contactData.message" for="message">Your message</label>
+                        <img *ngIf="message.valid" class="alertInTextField" src="./assets/img/success.png">
 
-                        @if (!message.valid && message.touched) {
-                            <span [ngStyle]="{'color': 'red'}">Your message is empty</span>
-                            <img class="alertInTextField" src="./assets/img/alert.png">
-                        }
-
+                        <span [class.d-block]="contactData.message" *ngIf="message.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 8 letters</span>
+                        <img [class.d-block]="contactData.message" *ngIf="!message.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
                 </div>
 
                 <div class="privacyAndButton">
                     <div>
-                        <input #checkbox type="checkbox" name="checkbox" id="checkbox" [required]>
+                        <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
                         <span>I´ve read the privacy policy and agree to the processing of my data as outlined</span>
+                        
                     </div>
-
+                    <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please accept the privacy policy</span>
                     <button>Say hello!</button>
                 </div>
 
             </form>
         </div>
+    </div>
+
+    <div class="toTheTop" (click)="scrollTo('headline')">
+
     </div>
 
 

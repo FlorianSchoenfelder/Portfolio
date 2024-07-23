@@ -12,6 +12,20 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactSectionComponent {
 
+  isChecked: boolean = false;
+  isSubmitted: boolean = false
+  isInputFocused: boolean = false;
+
+  
+
+
+  scrollTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   http = inject(HttpClient)
 
   contactData = {
@@ -34,11 +48,12 @@ export class ContactSectionComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    this.isSubmitted = true;
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            alert(response);
             ngForm.resetForm();
           },
           error: (error) => {
@@ -49,6 +64,7 @@ export class ContactSectionComponent {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
       ngForm.resetForm();
+      this.isSubmitted = false;
     }
   }
 
