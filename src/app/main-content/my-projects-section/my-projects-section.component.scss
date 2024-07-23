@@ -26,6 +26,7 @@ $blue-color: #5988ff;
   padding: 16px 0px;
   img {
     width: 720px;
+    aspect-ratio: auto;
     object-position: center;
     transition: all 250ms;
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);

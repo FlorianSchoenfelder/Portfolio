@@ -168,6 +168,12 @@ section {
   bottom: 20%;
 }
 
+.alertInTextField {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+}
+
 @media (max-width: 1300px) {
   section {
     padding: 32px 64px;
