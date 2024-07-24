@@ -236,6 +236,12 @@ section {
   }
 }
 
+@media (max-width: 1000px) {
+  form {
+    gap: 30px !important;
+  }
+}
+
 @media (max-width: 700px) {
   section {
     padding: 32px;
@@ -262,5 +268,13 @@ section {
 @media (max-width: 400px) {
   .blue-ball2 {
     right: 0;
+  }
+
+  .smallInput {
+    height: 90px;
+  }
+
+  .bigInput {
+    height: 240px;
   }
 }

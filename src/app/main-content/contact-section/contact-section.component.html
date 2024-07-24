@@ -20,7 +20,7 @@
                 <div class="smallInput">
                     <input #email="ngModel" [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                     <label [class.labelTransform]="contactData.email" for="email">Your email</label>
-                    <img *ngIf="email.valid" class="alertInTextField" src="./assets/img/success.png">
+                    <img *ngIf="email.valid && contactData.email" class="alertInTextField" src="./assets/img/success.png">
 
                     <span [class.d-block]="contactData.email" *ngIf="email.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">Your email is not valid</span>
                     <img [class.d-block]="contactData.email" *ngIf="!email.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">

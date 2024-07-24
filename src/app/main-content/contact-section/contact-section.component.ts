@@ -34,7 +34,7 @@ export class ContactSectionComponent {
     message: '',
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://florian-schoenfelder.de/sendMail.php',
@@ -49,28 +49,28 @@ export class ContactSectionComponent {
 
   onSubmit(ngForm: NgForm) {
     this.isSubmitted = true;
-    console.log(ngForm);
+    // console.log(ngForm)
     
-    // if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-    //   this.http.post(this.post.endPoint, this.post.body(this.contactData))
-    //     .subscribe({
-    //       next: (response) => {
-    //         alert(response)
-    //         this.contactData.name = '';
-    //         this.contactData.email = '';
-    //         this.resetForm(ngForm);
-    //       },
-    //       error: (error) => {
-    //         console.error(error);
-    //       },
-    //       complete: () => console.info('send post complete'),
-    //     });
-    // } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            alert(response)
+            this.contactData.name = '';
+            this.contactData.email = '';
+            this.resetForm(ngForm);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
-    //   this.resetForm(ngForm);
-    //   this.isSubmitted = false;
-    //   alert('Abgeschickt');
-    // }
+      this.resetForm(ngForm);
+      this.isSubmitted = false;
+      alert('Abgeschickt');
+    }
   }
 
   resetForm(ngForm: NgForm) {

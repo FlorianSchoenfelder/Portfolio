@@ -18,7 +18,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $name = $params->name;
             $message = $params->message;
     
-            $recipient = 'f.schoenfelder22@gmail.com';  
+            $recipient = 'info@florian-schoenfelder.de';  
             $subject = "Contact From <$email>";
             $message = "From:" . $name . "<br>" . $message ;
     
@@ -27,7 +27,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $headers[] = 'Content-type: text/html; charset=utf-8';
 
             // Additional headers
-            $headers[] = "From: noreply@mywebsite.com";
+            $headers[] = "From: noreply@florian-schoenfelder.de";
 
             mail($recipient, $subject, $message, implode("\r\n", $headers));
             break;
@@ -35,3 +35,4 @@ switch ($_SERVER['REQUEST_METHOD']) {
             header("Allow: POST", true, 405);
             exit;
     } 
+    

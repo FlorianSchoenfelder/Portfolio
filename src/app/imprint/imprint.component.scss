@@ -1,0 +1,36 @@
+section {
+    padding: 180px 32px 64px 32px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 1.1719rem + 1.6406vw, 2.8125rem);
+    padding-bottom: 48px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.paddingSmall {
+    padding: 16px 0px;
+}
+
+.paddingBig {
+    padding: 32px 0px;
+}
+
+.ball {
+    position: absolute;
+    z-index: -1;
+    top: -180px;
+    left: -110px;
+    width: 450px;
+    height: 450px;
+}
+
+@media (max-width: 720px) {
+    .ball {
+        width: 250px;
+        height: 250px;
+        top: -70px;
+        left: -55px;
+    }
+}
