@@ -4,7 +4,7 @@
 </section>
 
 <section class="myWorkBoxes" *ngFor="let item of myWork; let i = index">
-    <img src="./assets/img/my-work-section/{{ item.img }}" alt="Pokedex-FRAME">
+    <img id="img{{ i }}" src="./assets/img/my-work-section/{{ item.img }}" alt="Pokedex-FRAME">
     <div class="myWorkDescription">
         <h1>{{ item.title }}</h1>
         <p>{{ item.languages }}</p>

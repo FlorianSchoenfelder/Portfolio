@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class MyProjectsSectionComponent {
 
-  
+
 
   public myWork: { title: string; img: string; languages: string; description: string; link: string; github: string }[] = [
     {
@@ -42,9 +42,10 @@ export class MyProjectsSectionComponent {
       github: 'https://github.com/FlorianSchoenfelder/Pokedex.git',
     },
   ]
-  
+
 
   ngOnInit(): void {
+
     gsap.from('#headline-myWork', {
       scrollTrigger: {
         trigger: '#headline-myWork',
@@ -56,7 +57,54 @@ export class MyProjectsSectionComponent {
       opacity: 0,
       duration: 1
     });
+    this.animationMyWorkImage0();
+    this.animationMyWorkImage1();
+    this.animationMyWorkImage2();
   }
+
+  animationMyWorkImage0() {
+    gsap.from('#img0', {
+      scrollTrigger: {
+        trigger: '#img0',
+        // markers: true,
+        start: 'top 70%',
+        toggleActions: 'restart restart restart none'
+      }, // start animation when ".box" enters the viewport
+      x: -600,
+      opacity: 0,
+      duration: .5
+    });
+  }
+
+  animationMyWorkImage1() {
+    gsap.from('#img1', {
+      scrollTrigger: {
+        trigger: '#img1',
+        // markers: true,
+        start: 'top 70%',
+        toggleActions: 'restart restart restart none'
+      }, // start animation when ".box" enters the viewport
+      x: 600,
+      opacity: 0,
+      duration: .5
+    });
+  }
+
+  animationMyWorkImage2() {
+    gsap.from('#img2', {
+      scrollTrigger: {
+        trigger: '#img2',
+        // markers: true,
+        start: 'top 70%',
+        toggleActions: 'restart restart restart none'
+      }, // start animation when ".box" enters the viewport
+      x: -600,
+      opacity: 0,
+      duration: .5
+    });
+  }
+
+
 
   openGithub(link: string) {
     window.open(link, "_blank");

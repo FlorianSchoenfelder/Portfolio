@@ -49,23 +49,34 @@ export class ContactSectionComponent {
 
   onSubmit(ngForm: NgForm) {
     this.isSubmitted = true;
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            alert(response);
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    console.log(ngForm);
+    
+    // if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    //   this.http.post(this.post.endPoint, this.post.body(this.contactData))
+    //     .subscribe({
+    //       next: (response) => {
+    //         alert(response)
+    //         this.contactData.name = '';
+    //         this.contactData.email = '';
+    //         this.resetForm(ngForm);
+    //       },
+    //       error: (error) => {
+    //         console.error(error);
+    //       },
+    //       complete: () => console.info('send post complete'),
+    //     });
+    // } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
 
-      ngForm.resetForm();
-      this.isSubmitted = false;
-    }
+    //   this.resetForm(ngForm);
+    //   this.isSubmitted = false;
+    //   alert('Abgeschickt');
+    // }
+  }
+
+  resetForm(ngForm: NgForm) {
+    this.contactData.name = '';
+    this.contactData.email = '';
+    ngForm.resetForm();
   }
 
 }

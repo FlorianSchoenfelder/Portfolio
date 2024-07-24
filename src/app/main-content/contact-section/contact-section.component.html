@@ -9,7 +9,7 @@
         </div>
         <div class="rightContent">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <div>
+                <div class="smallInput">
                     <input #name="ngModel" [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" [minlength]="3" id="name" type="text" required>
                     <label [class.labelTransform]="contactData.name" for="name">Your name</label>
                     <img *ngIf="name.valid" class="alertInTextField" src="./assets/img/success.png">
@@ -17,7 +17,7 @@
                     <span [class.d-block]="contactData.name" *ngIf="name.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 3 letters</span>
                     <img [class.d-block]="contactData.name" *ngIf="!name.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">                   
                 </div>
-                <div>
+                <div class="smallInput">
                     <input #email="ngModel" [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                     <label [class.labelTransform]="contactData.email" for="email">Your email</label>
                     <img *ngIf="email.valid" class="alertInTextField" src="./assets/img/success.png">
@@ -25,7 +25,7 @@
                     <span [class.d-block]="contactData.email" *ngIf="email.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">Your email is not valid</span>
                     <img [class.d-block]="contactData.email" *ngIf="!email.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
                 </div>
-                <div>
+                <div class="bigInput">
                     <textarea #message="ngModel" [minlength]="8" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
                         <label [class.labelTransform]="contactData.message" for="message">Your message</label>
                         <img *ngIf="message.valid" class="alertInTextField" src="./assets/img/success.png">
@@ -41,7 +41,7 @@
                         
                     </div>
                     <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please accept the privacy policy</span>
-                    <button>Say hello!</button>
+                    <button type="submit" [disabled]="!contactForm.valid">Say hello!</button>
                 </div>
 
             </form>
