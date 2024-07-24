@@ -1,5 +1,8 @@
+$blue-color: #5988ff;
+
 section {
     padding: 180px 32px 64px 32px;
+    color: $blue-color;
 }
 
 h2 {
@@ -7,6 +10,11 @@ h2 {
     padding-bottom: 48px;
     text-decoration: underline;
     text-decoration-thickness: 2px;
+    text-align: center;
+}
+
+ul, li, h3 {
+    color: $blue-color;
 }
 
 .paddingSmall {

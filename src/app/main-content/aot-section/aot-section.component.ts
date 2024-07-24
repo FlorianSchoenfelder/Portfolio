@@ -16,6 +16,9 @@ gsap.registerPlugin(TextPlugin);
 })
 export class AotSectionComponent {
 
+  public myLinkedIn:string = 'https://www.linkedin.com/in/florian-schoenfelder-72099b232/';
+  public myGithub:string = 'https://github.com/FlorianSchoenfelder';
+
   constructor() {
 
   }
@@ -43,6 +46,16 @@ export class AotSectionComponent {
       });
       }, 1000);
     }, 1000);
+  }
+
+  moveTo(link:string) {
+    if (link == 'linkedin') {
+      window.open(this.myLinkedIn, "_blank");
+    } else if (link == 'github') {
+      window.open(this.myGithub, "_blank");
+    } else {
+      window.location.assign("mailto:info@florian-schoenfelder.de");
+    }
   }
 
 }
