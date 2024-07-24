@@ -10,7 +10,7 @@
         <div class="rightContent">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="smallInput">
-                    <input #name="ngModel" [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" [minlength]="3" id="name" type="text" required>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" [minlength]="3" id="name" type="text" name="name-input" required>
                     <label [class.labelTransform]="contactData.name" for="name">Your name</label>
                     <img *ngIf="name.valid" class="alertInTextField" src="./assets/img/success.png">
                     
@@ -18,7 +18,7 @@
                     <img [class.d-block]="contactData.name" *ngIf="!name.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">                   
                 </div>
                 <div class="smallInput">
-                    <input #email="ngModel" [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" id="email" type="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                    <input #email="ngModel" [(ngModel)]="contactData.email" id="email" type="email" name="email-input" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                     <label [class.labelTransform]="contactData.email" for="email">Your email</label>
                     <img *ngIf="email.valid && contactData.email" class="alertInTextField" src="./assets/img/success.png">
 
@@ -33,7 +33,7 @@
                         <span [class.d-block]="contactData.message" *ngIf="message.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 8 letters</span>
                         <img [class.d-block]="contactData.message" *ngIf="!message.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
                 </div>
-
+ 
                 <div class="privacyAndButton">
                     <div>
                         <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
