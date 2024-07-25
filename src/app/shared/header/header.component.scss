@@ -11,6 +11,7 @@ $blue-color: #5988ff;
   .links {
     display: flex;
     gap: 36px;
+    padding-right: 88px;
     a {
       width: 120px;
       font-size: 23px;
@@ -27,6 +28,12 @@ $blue-color: #5988ff;
 
 .d-none {
   display: none !important;
+}
+
+.mobile-switch {
+  // display: none;
+  position: absolute;
+  right: 0;
 }
 
 
@@ -46,10 +53,14 @@ $blue-color: #5988ff;
   }
 }
 
-@media (max-width: 1220px) { 
+@media (max-width: 1300px) { 
     .btn {
       display: block !important;
     }
+    .mobile-switch {
+      right: 85px;
+    }
+    
     .links {
         display: none !important;
     }
@@ -94,7 +105,7 @@ $blue-color: #5988ff;
 .btn {
   position: absolute;
   display: none;
-  top: 50%;
+  top: 48%;
     right: 0;
   transform: translate(-50%, -50%);
   width: 36px;
@@ -218,5 +229,64 @@ span + span {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+
+.absolute {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  border: 2px solid;
+}
+
+.toggle-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 71px;
+  height: 34px;
+  background-color: #5988ff;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-label:before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-input:checked + .toggle-label:before {
+  transform: translateX(36px);
+}
+
+.flags {
+  position: absolute;
+  display: flex;
+  z-index: 0;
+  gap: 2px;
+  img {
+    height: 34px;
+    width: 34px;
   }
 }
