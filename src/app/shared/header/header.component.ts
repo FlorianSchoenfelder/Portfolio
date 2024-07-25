@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { gsap } from "gsap";
 import { MobileNavigationComponent } from '../mobile-navigation/mobile-navigation.component';
 import 'animate.css';
-import { log } from 'console';
-
+import { gsap } from "gsap";
 @Component({
   selector: 'app-header',
   standalone: true,

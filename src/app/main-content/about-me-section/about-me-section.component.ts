@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { gsap } from "gsap";
+import { Component } from '@angular/core';
 import { ScrollTrigger } from 'gsap/all';
+import { gsap } from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin(ScrollTrigger) 

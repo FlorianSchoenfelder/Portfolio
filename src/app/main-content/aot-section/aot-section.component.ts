@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TextPlugin } from 'gsap/all';
 import { gsap } from "gsap";
-
-import { TextPlugin } from "gsap/TextPlugin";
 
 
 gsap.registerPlugin(TextPlugin);
