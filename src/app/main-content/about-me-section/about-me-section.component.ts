@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { ScrollTrigger } from 'gsap/all';
 import { gsap } from "gsap";
+import { BrowserModule } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {TranslateService} from '@ngx-translate/core';
 
 gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin(ScrollTrigger) 
@@ -9,10 +14,14 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-about-me-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './about-me-section.component.html',
   styleUrl: './about-me-section.component.scss'
 })
+
+
+
+
 export class AboutMeSectionComponent {
 
 
@@ -35,11 +44,6 @@ export class AboutMeSectionComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+
   }
-
-
-
-
-
-
 }

@@ -14,11 +14,11 @@
     </div>
     <div class="mobile-switch">
         <div class="toggle-switch">
-            <input class="toggle-input" id="toggle" type="checkbox" />
+            <input (change)="toggleLanguage($event)" class="toggle-input" id="toggle" type="checkbox" />
             <label class="toggle-label" for="toggle"></label>
             <div class="flags">
-                <img src="./../../../assets/img/usaFlag.png">
-                <img src="./../../../assets/img/germanFlag.png">
+                <img src="./assets/img/usaFlag.png">
+                <img src="./assets/img/germanFlag.png">
             </div>
         </div>
     </div>
