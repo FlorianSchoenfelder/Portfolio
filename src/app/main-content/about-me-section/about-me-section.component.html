@@ -1,17 +1,17 @@
 <img class="blue-ball" src="./assets/img/blue-ball.png">
 <section>
     
-    <p id="work-together">{{ 'HELLO' | translate}}</p>
+    <p id="work-together">{{ 'ABOUTME.GREETING' | translate }}</p>
     <div class="about-me-text">
-        <span>I am a Front-end developer based in Unna, Germany. I enjoy helping designers and companies bring their ideas into real life. I am looking forward to continuing my developer career with a job in a junior web developer position.</span><br>
+        <span>{{ 'ABOUTME.INTRODUCTION' | translate }}</span><br>
              <br>
-             <span>If you think I’d be a good match for your projects, contact me!</span>
+             <span>{{ 'ABOUTME.BE_TOGETHER' | translate }}</span>
              <br>
              <br>
 
         <button (click)="scrollTo('contact')">
             <span></span>
-            Send a message
+            {{ 'ABOUTME.BUTTON' | translate }}
         </button>
         
     </div>

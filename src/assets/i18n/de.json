@@ -1,4 +1,38 @@
 {
-  "HELLO": "hallo"
+  "HEADER" : {
+      "ABOUT_ME": "Über mich",
+      "SKILL_SET": "Fähigkeiten",
+      "MY_WORK": "Meine arbeit"
+  },
+  "AOT" : {
+    "GREETING": "Hallo ! Ich bin Florian"
+  },
+  "ABOUTME" : {
+    "GREETING": "Lass uns zusammen arbeiten",
+    "INTRODUCTION": "Ich bin ein Frontend Entwickler mit Wohnsitz in Cuxhaven. Ich begeistere mich für die Technik und mag es Dinge toll zu Designen.",
+    "BE_TOGETHER": "Wenn Sie meinen, dass ich gut zu Ihren Projekten passe, kontaktieren Sie mich!",
+    "BUTTON": "Nachricht senden"
+  },
+  "SKILLSET" : "Fähigkeiten",
+  "MYWORK" : {
+    "HEADLINE": "Meine Arbeit",
+    "SECTION_DESCRIPTION": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit dem Projekt, um meine Fähigkeiten in Aktion zu sehen",
+    "JOIN_DESCRIPTION": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+    "POLLO_LOCO_DESCRIPTION": "Spring-, Lauf- und Wurfspiel mit objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "POKEDEX_DESCRIPTION": "Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+  },
+  "CONTACT" : {
+      "HEADLINE": "Kontakt",
+      "PROBLEM_TO_SOLVE": "Haben Sie ein Problem zu lösen?",
+      "CONTACT_ME": "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
+      "NEED_ME_ONE": "Brauchen Sie einen Frontend Entwickler?",
+      "NEED_ME_TWO": "Kontaktieren Sie mich!",
+      "INPUT_ONE": "Dein Name",
+      "INPUT_TWO": "Deine E-Mail",
+      "INPUT_THREE": "Deine Nachricht",
+      "PRIVACY_POLICY": "Ich habe die Datenschutzrichtlinie gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "BUTTON": "Sag hallo!"
+    },
+  "IMPRINT" : "Impressum"
   
 }

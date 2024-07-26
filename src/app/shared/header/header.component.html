@@ -3,9 +3,9 @@
         src="./assets/img/logo.png" alt="MY_LOGO">
     <!-- <img *ngIf="burgerButton" src="./assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE"> -->
     <div class="links">
-        <a href="#about-me">About me</a>
-        <a href="#skill">Skill set</a>
-        <a href="#projects">My work</a>
+        <a href="#about-me">{{ 'HEADER.ABOUT_ME' | translate }}</a>
+        <a href="#skill">{{ 'HEADER.SKILL_SET' | translate }}</a>
+        <a href="#projects">{{ 'HEADER.MY_WORK' | translate }}</a>
     </div>
     <div (click)="toggleBurgerMenu()" #btn id="burger" class="btn not-active">
         <span></span>
@@ -14,7 +14,7 @@
     </div>
     <div class="mobile-switch">
         <div class="toggle-switch">
-            <input (change)="toggleLanguage($event)" class="toggle-input" id="toggle" type="checkbox" />
+            <input (click)="checkValue()" [(ngModel)]="isChecked" class="toggle-input" id="toggle" type="checkbox" />
             <label class="toggle-label" for="toggle"></label>
             <div class="flags">
                 <img src="./assets/img/usaFlag.png">

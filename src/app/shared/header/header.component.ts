@@ -4,6 +4,7 @@ import { MobileNavigationComponent } from '../mobile-navigation/mobile-navigatio
 import 'animate.css';
 import { gsap } from "gsap";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +13,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MobileNavigationComponent, TranslateModule],
+  imports: [CommonModule, MobileNavigationComponent, TranslateModule, FormsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  
 
   constructor(private translateService: TranslateService) {}
 
@@ -25,17 +27,19 @@ export class HeaderComponent {
   burgerButton: boolean = false;
   menuOut: boolean = false;
   mainLogo: boolean = true;
+  isChecked: boolean = false;
 
-  toggleLanguage(event: Event): void {
-    let defaultLanguage = this.translateService.getDefaultLang();
-    console.log('Default Language:', defaultLanguage);
-    const input = event.target as HTMLInputElement;
-    if (input.checked) {
-      console.log(defaultLanguage, 'yes');
+  checkValue(): void {
+    // let defaultLanguage = this.translateService.getDefaultLang();
+    // console.log(this.isChecked);
+    // const input = event.target as HTMLInputElement;
+    if (!this.isChecked) {
+      this.translateService.use('en');
+      console.log('EN');
       
-      defaultLanguage == 'de';
-    } else {
-      defaultLanguage == 'en';
+    } else if (this.isChecked) {
+      this.translateService.use('de');
+      console.log('DE');
     }
   }
 
@@ -43,8 +47,8 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     gsap.from("#navigation", { delay: 1.5, duration: 1.5, y: -150, opacity: 0 })
-    const defaultLanguage = this.translateService.getDefaultLang();
-    console.log('Default Language:', defaultLanguage);
+    // const defaultLanguage = this.translateService.getDefaultLang();
+    // console.log('Default Language:', defaultLanguage);
   }
 
   toggleBurgerMenu() {

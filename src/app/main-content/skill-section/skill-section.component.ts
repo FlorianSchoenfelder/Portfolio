@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ScrollTrigger } from 'gsap/all';
 import { gsap } from "gsap";
+import { TranslateModule } from '@ngx-translate/core';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-skill-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './skill-section.component.html',
   styleUrl: './skill-section.component.scss'
 })

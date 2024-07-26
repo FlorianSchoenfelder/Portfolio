@@ -1,17 +1,16 @@
 <section>
-    <h1>Contact</h1>
+    <h1>{{ 'CONTACT.HEADLINE' | translate }}</h1>
     <div class="contactContent">
         <div class="leftContent">
-            <span>Got a problem to solve?</span>
-            <span>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing
-                to your projects with my work.</span>
-            <span>Need a Frontend developer? <b>Contact me!</b></span>
+            <span>{{ 'CONTACT.PROBLEM_TO_SOLVE' | translate }}</span>
+            <span>{{ 'CONTACT.CONTACT_ME' | translate }}</span>
+            <span>{{ 'CONTACT.NEED_ME_ONE' | translate }} <b>{{ 'CONTACT.NEED_ME_TWO' | translate }}</b></span>
         </div>
         <div class="rightContent">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="smallInput">
                     <input #name="ngModel" [(ngModel)]="contactData.name" [minlength]="3" id="name" type="text" name="name-input" required>
-                    <label [class.labelTransform]="contactData.name" for="name">Your name</label>
+                    <label [class.labelTransform]="contactData.name" for="name">{{ 'CONTACT.INPUT_ONE' | translate }}</label>
                     <img *ngIf="name.valid" class="alertInTextField" src="./assets/img/success.png">
                     
                     <span [class.d-block]="contactData.name" *ngIf="name.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 3 letters</span>
@@ -19,7 +18,7 @@
                 </div>
                 <div class="smallInput">
                     <input #email="ngModel" [(ngModel)]="contactData.email" id="email" type="email" name="email-input" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                    <label [class.labelTransform]="contactData.email" for="email">Your email</label>
+                    <label [class.labelTransform]="contactData.email" for="email">{{ 'CONTACT.INPUT_TWO' | translate }}</label>
                     <img *ngIf="email.valid && contactData.email" class="alertInTextField" src="./assets/img/success.png">
 
                     <span [class.d-block]="contactData.email" *ngIf="email.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">Your email is not valid</span>
@@ -27,7 +26,7 @@
                 </div>
                 <div class="bigInput">
                     <textarea #message="ngModel" [minlength]="8" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
-                        <label [class.labelTransform]="contactData.message" for="message">Your message</label>
+                        <label [class.labelTransform]="contactData.message" for="message">{{ 'CONTACT.INPUT_THREE' | translate }}</label>
                         <img *ngIf="message.valid" class="alertInTextField" src="./assets/img/success.png">
 
                         <span [class.d-block]="contactData.message" *ngIf="message.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 8 letters</span>
@@ -37,11 +36,11 @@
                 <div class="privacyAndButton">
                     <div>
                         <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
-                        <span>I´ve read the privacy policy and agree to the processing of my data as outlined</span>
+                        <span>{{ 'CONTACT.PRIVACY_POLICY' | translate }}</span>
                         
                     </div>
                     <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please accept the privacy policy</span>
-                    <button type="submit" [disabled]="!contactForm.valid">Say hello!</button>
+                    <button type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.BUTTON' | translate }}</button>
                 </div>
 
             </form>

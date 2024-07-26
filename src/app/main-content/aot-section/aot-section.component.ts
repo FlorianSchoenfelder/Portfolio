@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TextPlugin } from 'gsap/all';
 import { gsap } from "gsap";
+import { TranslateModule } from '@ngx-translate/core';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 
 gsap.registerPlugin(TextPlugin);
@@ -9,7 +11,7 @@ gsap.registerPlugin(TextPlugin);
 @Component({
   selector: 'app-aot-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './aot-section.component.html',
   styleUrl: './aot-section.component.scss'
 })
@@ -17,6 +19,8 @@ export class AotSectionComponent {
 
   public myLinkedIn:string = 'https://www.linkedin.com/in/florian-schoenfelder-72099b232/';
   public myGithub:string = 'https://github.com/FlorianSchoenfelder';
+
+  header = inject(HeaderComponent);
 
   constructor() {
 
@@ -46,6 +50,11 @@ export class AotSectionComponent {
       }, 1000);
     }, 1000);
   }
+
+// if (this.header.isChecked) {
+//   this.ngOnInit();
+  
+// }
 
   moveTo(link:string) {
     if (link == 'linkedin') {

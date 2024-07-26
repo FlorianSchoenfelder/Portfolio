@@ -1,4 +1,38 @@
 {
-    "HELLO": "hello"
+    "HEADER" : {
+        "ABOUT_ME": "About me",
+        "SKILL_SET": "Skill set",
+        "MY_WORK": "My work"
+    },
+    "AOT" : {
+      "GREETING": "Hello! I am Florian"
+    },
+    "ABOUTME" : {
+      "GREETING": "Let's work together",
+      "INTRODUCTION": "I am a frontend developer living in Cuxhaven. I am passionate about technology and love designing great things.",
+      "BE_TOGETHER": "If you think I’d be a good match for your projects, contact me!",
+      "BUTTON": "Send a message"
+    },
+    "SKILLSET" : "Skill set",
+    "MYWORK" : {
+      "HEADLINE": "My work",
+      "SECTION_DESCRIPTION": "Explore a selection of my work here - Interact with project to see my skills in action",
+      "JOIN_DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "POLLO_LOCO_DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      "POKEDEX_DESCRIPTION": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+    },
+    "CONTACT" : {
+      "HEADLINE": "Contact",
+      "PROBLEM_TO_SOLVE": "Got a problem to solve?",
+      "CONTACT_ME": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+      "NEED_ME_ONE": "Need a Frontend developer?",
+      "NEED_ME_TWO": "Contact me!",
+      "INPUT_ONE": "Your name",
+      "INPUT_TWO": "Your email",
+      "INPUT_THREE": "Your message",
+      "PRIVACY_POLICY": "I´ve read the privacy policy and agree to the processing of my data as outlined",
+      "BUTTON": "Say hello!"
+    },
+    "IMPRINT" : "Imprint"
     
-}
+  }
