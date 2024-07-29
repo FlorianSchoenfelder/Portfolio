@@ -21,25 +21,54 @@ gsap.registerPlugin(ScrollTrigger);
 
 export class AboutMeSectionComponent {
 
+  /**
+ * Initializes the component and sets up an animation for the element with the ID 'work-together'.
+ * 
+ * @ngOnInit
+ * Utilizes GSAP to animate the element with the ID 'work-together'.
+ * The animation is triggered by a scroll event, starting when the top of the element
+ * reaches the bottom of the viewport. The element moves 100 pixels along the x-axis from the left
+ * and its opacity changes from 0 to 1 over a duration of 1 second.
+ * 
+ * ScrollTrigger Configuration:
+ * - `trigger`: Specifies the element that triggers the animation.
+ * - `start`: Defines the start point of the animation when the top of the element reaches the bottom of the viewport.
+ * - `toggleActions`: Defines the sequence of actions for the animation.
+ * 
+ * GSAP Animation Properties:
+ * - `x`: The horizontal offset for the animation (-100 pixels).
+ * - `opacity`: The starting opacity of the element (0, fully transparent).
+ * - `duration`: The duration of the animation (1 second).
+ * 
+ * @returns {void}
+ */
+
   ngOnInit(): void {
     gsap.from('#work-together', {
       scrollTrigger: {
         trigger: '#work-together',
-        // markers: true,
         start: 'top bottom',
         toggleActions: 'restart none restart none'
-      }, // start animation when ".box" enters the viewport
+      },
       x: -100,
       opacity: 0,
       duration: 1
     });
   }
 
+  /**
+ * Scrolls smoothly to the section with the specified ID.
+ * 
+ * @param {string} sectionId - The ID of the section to scroll to.
+ * 
+ * The method retrieves the DOM element with the given ID and, if found, scrolls the element into view with a smooth scrolling behavior.
+ * 
+ * @returns {void}
+ */
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-
   }
 }

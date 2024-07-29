@@ -39,7 +39,10 @@
       "PRIVACY_POLICY_BEGIN": "Ich habe die",
       "PRIVACY_POLICY_MIDDLE": "Datenschutzrichtlinie",
       "PRIVACY_POLICY_END": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-      "BUTTON": "Sag hallo!"
+      "BUTTON": "Sag hallo!",
+      "INVALID_NAME": "Die Anforderungen für den Namen sind nicht vollständig gegeben. Bitte geben Sie mindestens 3 Buchstaben ein",
+      "INVALID_EMAIL": "Ihre E-Mail ist ungültig",
+      "INVALID_MESSAGE": "Die Anforderungen für die Nachricht sind nicht vollständig angegeben. Bitte geben Sie mindestens 8 Buchstaben ein"
     },
   "IMPRINT" : "Impressum"
   

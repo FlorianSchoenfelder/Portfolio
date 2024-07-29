@@ -15,7 +15,6 @@ $blue-color: #5988ff;
     a {
       width: 160px;
       font-size: 23px;
-      // padding: 0px 16px;
       text-decoration: unset;
       font-family: "Montserrat";
       text-align: center;
@@ -32,11 +31,9 @@ $blue-color: #5988ff;
 }
 
 .mobile-switch {
-  // display: none;
   position: absolute;
   right: 0;
 }
-
 
 @media (max-width: 840px) {
   .header {
@@ -61,7 +58,6 @@ $blue-color: #5988ff;
     .mobile-switch {
       right: 85px;
     }
-    
     .links {
         display: none !important;
     }
@@ -91,18 +87,9 @@ $blue-color: #5988ff;
     width: 100%;
     background: linear-gradient(179.99deg, rgba(255, 255, 255, 0.89) 12.89%, rgba(234, 240, 255, 0.863) 91.39%);
     z-index: 9;
-    // animation: fadeInRight;
     animation-duration: 500ms;
 }
 
-// .menu-out {
-//   animation: fadeOutRight;
-//   animation-duration: 1s;
-// }
-
-
-
-//  Burger Button 
 .btn {
   position: absolute;
   display: none;

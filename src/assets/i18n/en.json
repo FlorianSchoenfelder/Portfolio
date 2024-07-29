@@ -39,7 +39,10 @@
       "PRIVACY_POLICY_BEGIN": "I´ve read the",
       "PRIVACY_POLICY_MIDDLE": "privacy policy",
       "PRIVACY_POLICY_END": "and agree to the processing of my data as outlined",
-      "BUTTON": "Say hello!"
+      "BUTTON": "Say hello!",
+      "INVALID_NAME": "The requirements for name are not fully given. Please enter at least 3 letters",
+      "INVALID_EMAIL": "Your email is not valid",
+      "INVALID_MESSAGE": "The requirements for name are not fully given. Please enter at least 8 letters"
     },
     "IMPRINT" : "Imprint"
     

@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class MyProjectsSectionComponent {
 
-translation:boolean = false;
+  translation: boolean = false;
 
   public myWork: { title: string; img: string; languages: string; descriptionEN: string; descriptionDE: string; link: string; github: string }[] = [
     {
@@ -45,24 +45,51 @@ translation:boolean = false;
       link: 'https://pokedex.florian-schoenfelder.de/index.html',
       github: 'https://github.com/FlorianSchoenfelder/Pokedex.git',
     },
-  ]
+  ];
 
-  constructor(private translatesevice: TranslateService) {
+  constructor(private translatesevice: TranslateService) { }
 
-  }
-
-
+  /**
+ * Initializes the component and sets up language change subscription and headline animation.
+ * 
+ * This method sets up a subscription to the language change event of the translation service.
+ * When the language changes, it updates the `translation` property based on the current language.
+ * Additionally, it calls the `headlineAnimation` method to set up the animation for the headline.
+ * 
+ * @returns {void}
+ */
   ngOnInit(): void {
-
-
     this.translatesevice.onLangChange.subscribe((event: LangChangeEvent) => {
       if (event.lang == 'de') {
         this.translation = false;
-      }else if (event.lang == 'en'){
+      } else if (event.lang == 'en') {
         this.translation = true;
       }
     });
+    this.headlineAnimation();
+  }
 
+  /**
+ * Animates the headline with the ID 'headline-myWork' when it enters the viewport using GSAP.
+ * 
+ * This method sets up a GSAP animation for the element with the ID 'headline-myWork'.
+ * The animation is triggered by a scroll event, starting when the top of the element
+ * reaches the bottom of the viewport. The element moves 100 pixels along the x-axis from the left
+ * and its opacity changes from 0 to 1 over a duration of 1 second.
+ * 
+ * ScrollTrigger Configuration:
+ * - `trigger`: Specifies the element that triggers the animation.
+ * - `start`: Defines the start point of the animation when the top of the element reaches the bottom of the viewport.
+ * - `toggleActions`: Defines the sequence of actions for the animation.
+ * 
+ * GSAP Animation Properties:
+ * - `x`: The horizontal offset for the animation (-100 pixels).
+ * - `opacity`: The starting opacity of the element (0, fully transparent).
+ * - `duration`: The duration of the animation (1 second).
+ * 
+ * @returns {void}
+ */
+  headlineAnimation() {
     gsap.from('#headline-myWork', {
       scrollTrigger: {
         trigger: '#headline-myWork',
@@ -74,16 +101,30 @@ translation:boolean = false;
       opacity: 0,
       duration: 1
     });
-
   }
 
-
-
-
+  /**
+ * Opens the specified GitHub link in a new browser tab.
+ * 
+ * This method takes a URL string as a parameter and opens it in a new browser tab.
+ * 
+ * @param {string} link - The URL of the GitHub page to open.
+ * 
+ * @returns {void}
+ */
   openGithub(link: string) {
     window.open(link, "_blank");
   }
 
+  /**
+ * Opens the specified project link in a new browser tab.
+ * 
+ * This method takes a URL string as a parameter and opens it in a new browser tab.
+ * 
+ * @param {string} project - The URL of the project page to open.
+ * 
+ * @returns {void}
+ */
   openProject(project: string) {
     window.open(project, "_blank");
   }

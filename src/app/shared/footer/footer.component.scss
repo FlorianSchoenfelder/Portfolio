@@ -4,8 +4,7 @@ footer {
       #5988ff 6.25%,
       #5988ff 51.56%,
       #0043f0 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    );
   width: 100%;
   height: 290px;
   display: flex;
@@ -17,7 +16,6 @@ footer {
     width: 64px;
     height: 64px;
   }
-
   .socials {
     width: 180px;
     height: 40px;

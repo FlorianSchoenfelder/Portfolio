@@ -9,45 +9,60 @@
         <div class="rightContent">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="smallInput">
-                    <input #name="ngModel" [(ngModel)]="contactData.name" [minlength]="3" id="name" type="text" name="name-input" required>
-                    <label [class.labelTransform]="contactData.name" for="name">{{ 'CONTACT.INPUT_ONE' | translate }}</label>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" [minlength]="3" id="name" type="text"
+                        name="name-input" required>
+                    <label [class.labelTransform]="contactData.name" for="name">{{ 'CONTACT.INPUT_ONE' | translate
+                        }}</label>
                     <img *ngIf="name.valid" class="alertInTextField" src="./assets/img/success.png">
-                    
-                    <span [class.d-block]="contactData.name" *ngIf="name.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 3 letters</span>
-                    <img [class.d-block]="contactData.name" *ngIf="!name.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">                   
+
+                    <span [class.d-block]="contactData.name" *ngIf="name.invalid"
+                        [ngStyle]="{'color': 'red', 'display': 'none'}"> {{ "CONTACT.INVALID_NAME" | translate }}</span>
+                    <img [class.d-block]="contactData.name" *ngIf="!name.valid" [ngStyle]="{'display': 'none'}"
+                        class="alertInTextField" src="./assets/img/alert.png">
                 </div>
                 <div class="smallInput">
-                    <input #email="ngModel" [(ngModel)]="contactData.email" id="email" type="email" name="email-input" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                    <label [class.labelTransform]="contactData.email" for="email">{{ 'CONTACT.INPUT_TWO' | translate }}</label>
-                    <img *ngIf="email.valid && contactData.email" class="alertInTextField" src="./assets/img/success.png">
+                    <input #email="ngModel" [(ngModel)]="contactData.email" id="email" type="email" name="email-input"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                    <label [class.labelTransform]="contactData.email" for="email">{{ 'CONTACT.INPUT_TWO' | translate
+                        }}</label>
+                    <img *ngIf="email.valid && contactData.email" class="alertInTextField"
+                        src="./assets/img/success.png">
 
-                    <span [class.d-block]="contactData.email" *ngIf="email.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">Your email is not valid</span>
-                    <img [class.d-block]="contactData.email" *ngIf="!email.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
+                    <span [class.d-block]="contactData.email" *ngIf="email.invalid"
+                        [ngStyle]="{'color': 'red', 'display': 'none'}">{{ "CONTACT.INVALID_EMAIL" | translate }}</span>
+                    <img [class.d-block]="contactData.email" *ngIf="!email.valid" [ngStyle]="{'display': 'none'}"
+                        class="alertInTextField" src="./assets/img/alert.png">
                 </div>
                 <div class="bigInput">
-                    <textarea #message="ngModel" [minlength]="8" [(ngModel)]="contactData.message" id="message" name="textfield" required id="textfield"></textarea>
-                        <label [class.labelTransform]="contactData.message" for="message">{{ 'CONTACT.INPUT_THREE' | translate }}</label>
-                        <img *ngIf="message.valid" class="alertInTextField" src="./assets/img/success.png">
+                    <textarea #message="ngModel" [minlength]="8" [(ngModel)]="contactData.message" id="message"
+                        name="textfield" required id="textfield"></textarea>
+                    <label [class.labelTransform]="contactData.message" for="message">{{ 'CONTACT.INPUT_THREE' |
+                        translate }}</label>
+                    <img *ngIf="message.valid" class="alertInTextField" src="./assets/img/success.png">
 
-                        <span [class.d-block]="contactData.message" *ngIf="message.invalid" [ngStyle]="{'color': 'red', 'display': 'none'}">The requirements for name are not fully given. Please enter at least 8 letters</span>
-                        <img [class.d-block]="contactData.message" *ngIf="!message.valid" [ngStyle]="{'display': 'none'}" class="alertInTextField" src="./assets/img/alert.png">
+                    <span [class.d-block]="contactData.message" *ngIf="message.invalid"
+                        [ngStyle]="{'color': 'red', 'display': 'none'}">{{ "CONTACT.INVALID_MESSAGE" | translate }}</span>
+                    <img [class.d-block]="contactData.message" *ngIf="!message.valid" [ngStyle]="{'display': 'none'}"
+                        class="alertInTextField" src="./assets/img/alert.png">
+                    <div class="successMessage" *ngIf="isSubmitted" [ngClass]="{'animate__bounceOut': !isSubmitted, 'animate__bounceIn': isSubmitted}">
+                        <span>Your E-mail was sent successfully</span>
+                    </div>
                 </div>
- 
                 <div class="privacyAndButton">
                     <div>
                         <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
-                        <span>{{ 'CONTACT.PRIVACY_POLICY_BEGIN' | translate }} <a class="privacyLink" href="privacy">{{ 'CONTACT.PRIVACY_POLICY_MIDDLE' | translate }}</a> {{ 'CONTACT.PRIVACY_POLICY_END' | translate }}</span>                        
+                        <span>{{ 'CONTACT.PRIVACY_POLICY_BEGIN' | translate }} <a class="privacyLink" href="privacy">{{
+                                'CONTACT.PRIVACY_POLICY_MIDDLE' | translate }}</a> {{ 'CONTACT.PRIVACY_POLICY_END' |
+                            translate }}</span>
                     </div>
-                    <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please accept the privacy policy</span>
+                    <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please
+                        accept the privacy policy</span>
                     <button type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.BUTTON' | translate }}</button>
                 </div>
-
             </form>
         </div>
     </div>
-
     <div class="toTheTop" (click)="scrollTo('headline')">
-
     </div>
 
 
