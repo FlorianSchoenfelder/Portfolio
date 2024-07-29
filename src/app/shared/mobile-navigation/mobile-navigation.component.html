@@ -1,8 +1,18 @@
 <img class="mobile-nav-img" src="./assets/img/logo-mobile-navabr.png" alt="LOGO_MOBILE">
 
 <ul>
-    <li> <a (click)="delayedNavigation($event)" href="#about-me">About me</a> </li>
-    <li> <a (click)="delayedNavigation($event)" href="#skill">Skill set</a> </li>
-    <li> <a (click)="delayedNavigation($event)" href="#projects">My work</a> </li>
-    <li> <a (click)="delayedNavigation($event)" href="#contact">Contact</a> </li>
+    <li> <a (click)="delayedNavigation($event)" href="#about-me">{{ "MOBILENAVBAR.ABOUT_ME" | translate }}</a>  </li>
+    <li> <a (click)="delayedNavigation($event)" href="#skill">{{ "MOBILENAVBAR.SKILL_SET" | translate }}</a>  </li>
+    <li> <a (click)="delayedNavigation($event)" href="#projects">{{ "MOBILENAVBAR.MY_WORK" | translate }}</a>  </li>
+    <li> <a (click)="delayedNavigation($event)" href="#contact">{{ "MOBILENAVBAR.CONTACT" | translate }}</a>  </li>
 </ul>
+
+
+<!-- <li *ngIf="!translation"> <a (click)="delayedNavigation($event)" href="#about-me">Über mich</a> </li>
+    <li *ngIf="translation"> <a (click)="delayedNavigation($event)" href="#about-me">About me</a> </li>
+    <li *ngIf="!translation"> <a (click)="delayedNavigation($event)" href="#skill">Fähigkeiten</a> </li>
+    <li *ngIf="translation"> <a (click)="delayedNavigation($event)" href="#skill">Skill set</a> </li>
+    <li *ngIf="!translation"> <a (click)="delayedNavigation($event)" href="#projects">Meine arbeit</a> </li>
+    <li *ngIf="translation"> <a (click)="delayedNavigation($event)" href="#projects">My work</a> </li>
+    <li *ngIf="!translation"> <a (click)="delayedNavigation($event)" href="#contact">Kontakt</a> </li>
+    <li *ngIf="translation"> <a (click)="delayedNavigation($event)" href="#contact">Contact</a> </li> -->

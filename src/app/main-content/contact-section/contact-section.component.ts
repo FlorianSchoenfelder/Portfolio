@@ -17,9 +17,6 @@ export class ContactSectionComponent {
   isSubmitted: boolean = false
   isInputFocused: boolean = false;
 
-  
-
-
   scrollTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {

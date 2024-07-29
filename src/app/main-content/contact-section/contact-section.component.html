@@ -36,8 +36,7 @@
                 <div class="privacyAndButton">
                     <div>
                         <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
-                        <span>{{ 'CONTACT.PRIVACY_POLICY' | translate }}</span>
-                        
+                        <span>{{ 'CONTACT.PRIVACY_POLICY_BEGIN' | translate }} <a class="privacyLink" href="privacy">{{ 'CONTACT.PRIVACY_POLICY_MIDDLE' | translate }}</a> {{ 'CONTACT.PRIVACY_POLICY_END' | translate }}</span>                        
                     </div>
                     <span class="privacyText" [ngStyle]="{'color': 'red'}" *ngIf="isSubmitted && !isChecked">Please accept the privacy policy</span>
                     <button type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.BUTTON' | translate }}</button>
@@ -54,6 +53,6 @@
 
 </section>
 
-<img class="blue-ball1" src="./assets/img/blue-ball.png">
+
 <img class="blue-ball2" src="./assets/img/blue-ball.png">
 <img class="blue-ball3" src="./assets/img/blue-ball.png">

@@ -19,11 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './about-me-section.component.scss'
 })
 
-
-
-
 export class AboutMeSectionComponent {
-
 
   ngOnInit(): void {
     gsap.from('#work-together', {

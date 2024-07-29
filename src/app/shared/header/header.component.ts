@@ -30,16 +30,10 @@ export class HeaderComponent {
   isChecked: boolean = false;
 
   checkValue(): void {
-    // let defaultLanguage = this.translateService.getDefaultLang();
-    // console.log(this.isChecked);
-    // const input = event.target as HTMLInputElement;
     if (!this.isChecked) {
-      this.translateService.use('en');
-      console.log('EN');
-      
+      this.translateService.use('en'); 
     } else if (this.isChecked) {
       this.translateService.use('de');
-      console.log('DE');
     }
   }
 
@@ -47,8 +41,6 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     gsap.from("#navigation", { delay: 1.5, duration: 1.5, y: -150, opacity: 0 })
-    // const defaultLanguage = this.translateService.getDefaultLang();
-    // console.log('Default Language:', defaultLanguage);
   }
 
   toggleBurgerMenu() {

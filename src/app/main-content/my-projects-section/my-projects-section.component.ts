@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ScrollTrigger } from 'gsap/all';
 import { gsap } from "gsap";
-import { TranslateModule } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,14 +15,15 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class MyProjectsSectionComponent {
 
+translation:boolean = false;
 
-
-  public myWork: { title: string; img: string; languages: string; description: string; link: string; github: string }[] = [
+  public myWork: { title: string; img: string; languages: string; descriptionEN: string; descriptionDE: string; link: string; github: string }[] = [
     {
       title: 'Join',
       img: 'join.png',
       languages: 'JavaScript | HTML | CSS',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      descriptionEN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      descriptionDE: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
       link: 'https://join.florian-schoenfelder.de/assets/templates/index.html',
       github: 'https://github.com/FlorianSchoenfelder/Join.git',
     },
@@ -30,7 +31,8 @@ export class MyProjectsSectionComponent {
       title: 'Pollo Loco',
       img: 'polloloco.png',
       languages: 'JavaScript | HTML | CSS',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      descriptionEN: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      descriptionDE: 'Spring-, Lauf- und Wurfspiel mit objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
       link: 'https://el-pollo-loco.florian-schoenfelder.de/index.html',
       github: 'https://github.com/FlorianSchoenfelder/El_Pollo_Loco.git',
     },
@@ -38,14 +40,28 @@ export class MyProjectsSectionComponent {
       title: 'Pokedex',
       img: 'pokedex.png',
       languages: 'JavaScript | HTML | CSS | Api',
-      description: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
+      descriptionEN: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
+      descriptionDE: 'Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.',
       link: 'https://pokedex.florian-schoenfelder.de/index.html',
       github: 'https://github.com/FlorianSchoenfelder/Pokedex.git',
     },
   ]
 
+  constructor(private translatesevice: TranslateService) {
+
+  }
+
 
   ngOnInit(): void {
+
+
+    this.translatesevice.onLangChange.subscribe((event: LangChangeEvent) => {
+      if (event.lang == 'de') {
+        this.translation = false;
+      }else if (event.lang == 'en'){
+        this.translation = true;
+      }
+    });
 
     gsap.from('#headline-myWork', {
       scrollTrigger: {
@@ -58,52 +74,9 @@ export class MyProjectsSectionComponent {
       opacity: 0,
       duration: 1
     });
-    // this.animationMyWorkImage0();
-    // this.animationMyWorkImage1();
-    // this.animationMyWorkImage2();
+
   }
 
-  // animationMyWorkImage0() {
-  //   gsap.from('#img0', {
-  //     scrollTrigger: {
-  //       trigger: '#img0',
-  //       // markers: true,
-  //       start: 'top 70%',
-  //       toggleActions: 'restart restart restart none'
-  //     }, // start animation when ".box" enters the viewport
-  //     x: -600,
-  //     opacity: 0,
-  //     duration: .5
-  //   });
-  // }
-
-  // animationMyWorkImage1() {
-  //   gsap.from('#img1', {
-  //     scrollTrigger: {
-  //       trigger: '#img1',
-  //       // markers: true,
-  //       start: 'top 70%',
-  //       toggleActions: 'restart restart restart none'
-  //     }, // start animation when ".box" enters the viewport
-  //     x: 600,
-  //     opacity: 0,
-  //     duration: .5
-  //   });
-  // }
-
-  // animationMyWorkImage2() {
-  //   gsap.from('#img2', {
-  //     scrollTrigger: {
-  //       trigger: '#img2',
-  //       // markers: true,
-  //       start: 'top 70%',
-  //       toggleActions: 'restart restart restart none'
-  //     }, // start animation when ".box" enters the viewport
-  //     x: -600,
-  //     opacity: 0,
-  //     duration: .5
-  //   });
-  // }
 
 
 

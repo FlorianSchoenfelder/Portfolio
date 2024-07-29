@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TextPlugin } from 'gsap/all';
 import { gsap } from "gsap";
-import { TranslateModule } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from '../../shared/header/header.component';
 
 
@@ -21,18 +21,46 @@ export class AotSectionComponent {
   public myGithub:string = 'https://github.com/FlorianSchoenfelder';
 
   header = inject(HeaderComponent);
+  greeting:string = 'Hallo!';
+  welcome:string = 'Hallo! Ich bin Florian';
 
-  constructor() {
-
+  constructor(private translateservie: TranslateService) {
   }
 
+  
+
   ngOnInit(): void {
-    gsap.from("#myName", { text: "Hallo!" })
+
+    this.welcomeAnimation();
+    this.getLanguageForGreetingText();
+    this.myRoleAnimation();
+  }
+
+  getLanguageForGreetingText() {
+    this.translateservie.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log('Language changed', event.lang);
+        if (event.lang == 'de') {
+        this.greeting = 'Hallo!';
+        this.welcome = 'Hallo! Ich bin Florian';
+        this.welcomeAnimation();
+      } else {
+        this.greeting = 'Hello!';
+        this.welcome = 'Hello! I am Florian';
+        this.welcomeAnimation();
+      }
+    });
+  }
+
+  welcomeAnimation() {
+    gsap.from("#myName", { text: this.greeting })
     gsap.to('#myName', {
       duration: 1.5,
-      text: "Hallo! Ich bin Florian",
+      text: this.welcome,
       ease: "none",
     });
+  }
+
+  myRoleAnimation() {
     setTimeout(() => {
       gsap.from("#span1", { duration: 1.5, text: "" })
       gsap.to('#span1', {
@@ -40,21 +68,14 @@ export class AotSectionComponent {
         text: "FRONTEND",
         ease: "none",
       });
-      setTimeout(() => {
         gsap.from("#span2", { duration: 1.5, text: "" })
       gsap.to('#span2', {
         duration: 1.5,
         text: "DEVELOPER",
         ease: "none",
       });
-      }, 1000);
-    }, 1000);
+    }, 800);
   }
-
-// if (this.header.isChecked) {
-//   this.ngOnInit();
-  
-// }
 
   moveTo(link:string) {
     if (link == 'linkedin') {

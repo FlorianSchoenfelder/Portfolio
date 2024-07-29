@@ -4,6 +4,12 @@
       "SKILL_SET": "Fähigkeiten",
       "MY_WORK": "Meine arbeit"
   },
+  "MOBILENAVBAR" : {
+        "ABOUT_ME": "Über mich",
+        "SKILL_SET": "Fähigkeiten",
+        "MY_WORK": "Meine arbeit",
+        "CONTACT": "Kontakt"
+    },
   "AOT" : {
     "GREETING": "Hallo ! Ich bin Florian"
   },
@@ -30,7 +36,9 @@
       "INPUT_ONE": "Dein Name",
       "INPUT_TWO": "Deine E-Mail",
       "INPUT_THREE": "Deine Nachricht",
-      "PRIVACY_POLICY": "Ich habe die Datenschutzrichtlinie gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "PRIVACY_POLICY_BEGIN": "Ich habe die",
+      "PRIVACY_POLICY_MIDDLE": "Datenschutzrichtlinie",
+      "PRIVACY_POLICY_END": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
       "BUTTON": "Sag hallo!"
     },
   "IMPRINT" : "Impressum"

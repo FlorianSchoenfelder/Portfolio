@@ -191,16 +191,17 @@ $blue-color: #5988ff;
 }
 
 @media (max-width: 1330px) {
-  .ball1 {
-    left: unset !important;
-    right: 30% !important;
-  }
   .ball2 {
     top: 230px !important;
   }
 }
 
 @media (max-width: 1100px) {
+  .ball1 {
+    left: unset !important;
+    right: 5% !important;
+    width: 70px !important;
+  }
   .ball4 {
     height: 432px !important;
     width: 432px !important;
@@ -210,8 +211,8 @@ $blue-color: #5988ff;
 
 @media (max-width: 930px) {
   .ball1 {
-    left: unset !important;
-    right: 15% !important;
+    // left: unset !important;
+    // right: 15% !important;
     top: 20px;
   }
   .ball2 {
@@ -233,6 +234,8 @@ $blue-color: #5988ff;
   .headline h1 {
     font-size: 64px;
     padding-top: 64px;
+    line-height: 72px;
+    padding-bottom: 24px;
   }
   .myWorkBoxes {
     img {
