@@ -1,5 +1,5 @@
 <section>
-    <h1>{{ 'CONTACT.HEADLINE' | translate }}</h1>
+    <h1 id="headline_contact">{{ 'CONTACT.HEADLINE' | translate }}</h1>
     <div class="contactContent">
         <div class="leftContent">
             <span>{{ 'CONTACT.PROBLEM_TO_SOLVE' | translate }}</span>
@@ -51,7 +51,7 @@
                 <div class="privacyAndButton">
                     <div>
                         <input #checkbox type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked" required>
-                        <span>{{ 'CONTACT.PRIVACY_POLICY_BEGIN' | translate }} <a class="privacyLink" href="privacy">{{
+                        <span>{{ 'CONTACT.PRIVACY_POLICY_BEGIN' | translate }} <a class="privacyLink"[routerLink]="[ 'privacy' ]" routerLinkActive="active">{{
                                 'CONTACT.PRIVACY_POLICY_MIDDLE' | translate }}</a> {{ 'CONTACT.PRIVACY_POLICY_END' |
                             translate }}</span>
                     </div>

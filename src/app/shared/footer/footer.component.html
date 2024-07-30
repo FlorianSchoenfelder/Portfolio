@@ -1,16 +1,19 @@
-<footer>
-   <img src="./assets/img/logo.png">
-   <div class="me">
-    <span>© Florian Schoenfelder 2024</span>
-    <a class="imprint" href="imprint">{{ 'IMPRINT' | translate }}</a>
-   </div> 
-   <div class="socials">
-    <img (click)="moveTo('github')" src="./assets/img/social1-white.png">
-    <img (click)="moveTo('email')" src="./assets/img/social2-white.png">
-    <img (click)="moveTo('linkedin')" src="./assets/img/social3-white.png">
-   </div>
+<section>
+   <footer>
+      <img src="./assets/img/logo.png">
+      <div class="me">
+         <span>© Florian Schoenfelder 2024</span>
+         <a [routerLink]="[ 'imprint' ]" routerLinkActive="active" class="imprint">{{ 'IMPRINT' | translate }}</a>
+      </div>
+      <div class="socials">
+         <img (click)="moveTo('github')" src="./assets/img/social1-white.png">
+         <img (click)="moveTo('email')" src="./assets/img/social2-white.png">
+         <img (click)="moveTo('linkedin')" src="./assets/img/social3-white.png">
+      </div>
 
-   <div class="imprintMobile">
-    <a  href="imprint">{{ 'IMPRINT' | translate }}</a>
-   </div>
-</footer>
+      <div class="imprintMobile">
+         <!-- <a  href="imprint">{{ 'IMPRINT' | translate }}</a> -->
+         <a [routerLink]="[ 'imprint' ]" routerLinkActive="active">{{ 'IMPRINT' | translate }}</a>
+      </div>
+   </footer>
+</section>

@@ -99,7 +99,7 @@ export class MyProjectsSectionComponent {
       }, // start animation when ".box" enters the viewport
       x: -100,
       opacity: 0,
-      duration: 1
+      duration: .25
     });
   }
 

@@ -6,6 +6,7 @@ $blue-color: #5988ff;
   flex-direction: column;
   align-items: start;
   z-index: 2;
+  max-width: 1440px;
   h1 {
     color: #5988ff;
     font-family: "Baloo 2";
@@ -24,6 +25,8 @@ $blue-color: #5988ff;
   height: fit-content;
   margin-bottom: 100px;
   padding: 16px 0px;
+  max-width: 1440px;
+  gap: 32px;
   img {
     width: 720px;
     aspect-ratio: auto;

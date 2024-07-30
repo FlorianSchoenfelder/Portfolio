@@ -5,6 +5,8 @@ import 'animate.css';
 import { gsap } from "gsap";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
+import { AppComponent } from '../../app.component';
+import { MainContentComponent } from '../../main-content/main-content.component';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +26,7 @@ export class HeaderComponent {
   burgerButton: boolean = false;
   menuOut: boolean = false;
   mainLogo: boolean = true;
-  isChecked: boolean = false;
+  isChecked: boolean = false; 
 
   constructor(private translateService: TranslateService) {}
 
@@ -38,11 +40,11 @@ export class HeaderComponent {
  */
   checkValue(): void {
     if (!this.isChecked) {
-      this.translateService.use('en'); 
+      this.translateService.use('en');
     } else if (this.isChecked) {
       this.translateService.use('de');
     }
-  }
+  }  
 
   /**
  * Initializes the component and sets up an animation for the navigation element using GSAP.

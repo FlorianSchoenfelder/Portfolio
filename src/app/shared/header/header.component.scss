@@ -8,6 +8,7 @@ $blue-color: #5988ff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1440px;
   .links {
     display: flex;
     gap: 36px;
@@ -26,6 +27,10 @@ $blue-color: #5988ff;
   }
 }
 
+.bigViewLogo {
+  display: none;
+}
+
 .d-none {
   display: none !important;
 }
@@ -33,6 +38,15 @@ $blue-color: #5988ff;
 .mobile-switch {
   position: absolute;
   right: 0;
+}
+
+@media (min-width:2525px) {
+  .bigViewLogo {
+    display: block;
+  }
+  .main-logo {
+    display: none;
+  }
 }
 
 @media (max-width: 840px) {

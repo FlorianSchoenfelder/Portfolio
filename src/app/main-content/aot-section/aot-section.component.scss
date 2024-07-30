@@ -1,23 +1,33 @@
 $blue-color: #5988ff;
 
 .aot-Frame {
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
+  
   display: flex;
+  justify-content: center;
   position: relative;
   background: linear-gradient(179.99deg, #ffffff 12.89%, #eaf0ff 91.39%);
-  .image-cointainer {
+  .maxWidth {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    .image-cointainer {
     z-index: 3;
     width: 45%;
     height: auto;
+    display: flex;
+    align-items: end;
     .image-of-myself {
       height: 817px;
       display: flex;
-      position: absolute;
+      // position: absolute;
       bottom: 0;
       left: 150px;
     }
   }
+  }
+  
 }
 
 .left-top-ball {
@@ -40,7 +50,7 @@ $blue-color: #5988ff;
 }
 
 .self-introduce-container {
-  position: absolute;
+  // position: absolute;
   right: 0;
   bottom: 0;
   top: 0;
@@ -138,6 +148,7 @@ $blue-color: #5988ff;
   .self-introduce-container {
     height: fit-content !important;
     width: 100%;
+    position: absolute;
   }
   .greeting-myself {
     width: 100% !important;
@@ -158,6 +169,7 @@ $blue-color: #5988ff;
     height: 750px !important;
     right: 180px;
     left: unset !important;
+    position: absolute;
   }
 }
 
@@ -167,7 +179,7 @@ $blue-color: #5988ff;
     height: 70px !important;
   }
   .image-of-myself {
-    height: 600px !important;
+    height: 560px !important;
     left: unset !important;
     right: unset;
   }
@@ -202,7 +214,8 @@ $blue-color: #5988ff;
     left: 50% !important;
     transform: translate(-50%, 0%);
     width: 100%;
-    max-width: 450px !important;
+    height: 438px !important;
+    max-width: 370px !important;
   }
   .aot-bottom-centered-ball {
     width: 150px;
@@ -215,9 +228,5 @@ $blue-color: #5988ff;
   .greeting-myself div span {
     font-size: 40px !important;
     height: 48px !important;
-  }
-
-  .image-of-myself {
-    height: 500px !important;
   }
 }

@@ -1,6 +1,7 @@
 <section id="navigation" class="header">
     <img *ngIf="mainLogo" class="main-logo" [ngClass]="{'animate__fadeOut': burgerButton, 'animate__fadeIn': menuOut}"
         src="./assets/img/logo.png" alt="MY_LOGO">
+        <img class="bigViewLogo" src="./../../../assets/img/logo-mobile-navabr.png">
     <div class="links">
         <a href="#about-me">{{ 'HEADER.ABOUT_ME' | translate }}</a>
         <a href="#skill">{{ 'HEADER.SKILL_SET' | translate }}</a>
@@ -14,6 +15,8 @@
     <div class="mobile-switch">
         <div class="toggle-switch">
             <input (click)="checkValue()" [(ngModel)]="isChecked" class="toggle-input" id="toggle" type="checkbox" />
+            <!-- <input type="checkbox"  class="toggle-input" id="toggle" [(ngModel)]="isChecked" (change)="onCheckboxChange($event)"> -->
+
             <label class="toggle-label" for="toggle"></label>
             <div class="flags">
                 <img src="./assets/img/usaFlag.png">

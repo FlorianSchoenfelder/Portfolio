@@ -25,6 +25,8 @@ export class PrivacyPolicyComponent {
  * @returns {void}
  */
   ngOnInit(): void {
+    window.scrollTo(0, 0);
+    this.setLanguage();
     this.translatesevice.onLangChange.subscribe((event: LangChangeEvent) => {
       if (event.lang == 'de') {
         this.translation = false;
@@ -34,4 +36,11 @@ export class PrivacyPolicyComponent {
     });
   }
 
+  setLanguage() {
+    let language = this.translatesevice.currentLang
+    console.log(language);
+    if (language == 'en') {
+      this.translation = true;
+    }
+  }
 }

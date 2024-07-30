@@ -2,10 +2,13 @@ app-about-me-section {
     display: flex;
     padding: 192px 64px 128px 64px;
     position: relative;
+    justify-content: center;
 }
 
 app-my-projects-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     flex-direction: column;
     padding: 32px 160px;
@@ -16,6 +19,8 @@ app-my-projects-section {
 app-contact-section {
     position: relative;
     display: flex;
+    justify-content: center;
+    padding: 0px 64px;
     overflow-x: hidden;
     background: linear-gradient(179.99deg, #ffffff 12.89%, #eaf0ff 91.39%);
 }

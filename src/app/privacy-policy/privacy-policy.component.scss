@@ -3,6 +3,11 @@ $blue-color: #5988ff;
 section {
     padding: 180px 32px 64px 32px;
     color: $blue-color;
+    display: flex;
+    justify-content: center;
+    div {
+        max-width: 1440px;
+    }
 }
 
 h1 {

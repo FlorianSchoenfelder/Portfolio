@@ -2,13 +2,20 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollTrigger } from 'gsap/all';
+import { gsap } from "gsap";
 import 'animate.css';
+import { PrivacyPolicyComponent } from '../../privacy-policy/privacy-policy.component';
+import { HeaderComponent } from '../../shared/header/header.component';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterModule],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss'
 })
@@ -38,6 +45,12 @@ export class ContactSectionComponent {
       },
     },
   };
+
+
+
+  ngOnInit(): void {
+    this.headlineAnimation();
+  }
 
   /**
  * Handles the submission of a form.
@@ -120,6 +133,20 @@ export class ContactSectionComponent {
     this.contactData.name = '';
     this.contactData.email = '';
     ngForm.resetForm();
+  }
+
+
+  headlineAnimation() {
+    gsap.from('#headline_contact', {
+      scrollTrigger: {
+        trigger: '#headline_contact',
+        start: 'top bottom',
+        toggleActions: 'restart none restart none'
+      }, // start animation when ".box" enters the viewport
+      x: -100,
+      opacity: 0,
+      duration: .25
+    });
   }
 
 }

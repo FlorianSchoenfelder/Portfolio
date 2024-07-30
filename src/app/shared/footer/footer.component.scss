@@ -1,11 +1,20 @@
-footer {
-  background: radial-gradient(
+section {
+   background: radial-gradient(
       71.18% 335.57% at 28.82% -124.4%,
       #5988ff 6.25%,
       #5988ff 51.56%,
       #0043f0 100%
     );
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+footer {
+ 
   width: 100%;
+  max-width: 1440px;
   height: 290px;
   display: flex;
   align-items: center;
