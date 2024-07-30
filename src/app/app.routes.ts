@@ -4,7 +4,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
-    {path: '', title: 'Portfolio', component: MainContentComponent},
+    {path: '', title: 'Florian Schoenfelder', component: MainContentComponent},
     {path: 'imprint', title: 'Imrpint', component: ImprintComponent},
     {path: 'privacy', title: 'PrivacyPolicy', component: PrivacyPolicyComponent},
 ];

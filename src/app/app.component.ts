@@ -14,5 +14,4 @@ import { ImprintComponent } from './imprint/imprint.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio';
 }
