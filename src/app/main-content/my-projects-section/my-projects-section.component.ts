@@ -18,14 +18,15 @@ export class MyProjectsSectionComponent {
   translation: boolean = false;
 
   public myWork: { title: string; img: string; languages: string; descriptionEN: string; descriptionDE: string; link: string; github: string }[] = [
+
     {
-      title: 'Join',
-      img: 'join.png',
-      languages: 'JavaScript | HTML | CSS',
-      descriptionEN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
-      descriptionDE: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
-      link: 'https://join.florian-schoenfelder.de/assets/templates/index.html',
-      github: 'https://github.com/FlorianSchoenfelder/Join.git',
+      title: 'Portfolio',
+      img: 'portfolio.png',
+      languages: 'Angular | TypeScript | SCSS | HTML',
+      descriptionEN: 'Created to showcase my knowledge and self-created projects.',
+      descriptionDE: 'Erstellt um meine Kenntnisse und meine selbst erstellten Projekte zu präsentieren.',
+      link: 'https://florian-schoenfelder.de/',
+      github: 'https://github.com/FlorianSchoenfelder/Portfolio.git',
     },
     {
       title: 'Pollo Loco',
@@ -37,14 +38,16 @@ export class MyProjectsSectionComponent {
       github: 'https://github.com/FlorianSchoenfelder/El_Pollo_Loco.git',
     },
     {
-      title: 'Pokedex',
-      img: 'pokedex.png',
-      languages: 'JavaScript | HTML | CSS | Api',
-      descriptionEN: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
-      descriptionDE: 'Basierend auf der PokéAPI, einer einfachen Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.',
-      link: 'https://pokedex.florian-schoenfelder.de/index.html',
-      github: 'https://github.com/FlorianSchoenfelder/Pokedex.git',
+      title: 'Join',
+      img: 'join.png',
+      languages: 'JavaScript | HTML | CSS',
+      descriptionEN: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      descriptionDE: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
+      link: 'https://join.florian-schoenfelder.de/assets/templates/index.html',
+      github: 'https://github.com/FlorianSchoenfelder/Join.git',
     },
+
+
   ];
 
   constructor(private translatesevice: TranslateService) { }
