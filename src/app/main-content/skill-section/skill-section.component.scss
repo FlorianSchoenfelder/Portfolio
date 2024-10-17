@@ -31,8 +31,8 @@ section {
       transition: all 125ms;
       //   border: 1px solid;
       color: white;
-      height: 110px;
-      width: fit-content;
+      height: fit-content;
+      max-width: 130px;
       gap: 10px;
       &:hover {
         transition: all 125ms;
@@ -51,10 +51,17 @@ section {
       p {
         color: white !important;
         text-align: center;
+        max-height: 50px;
       }
     }
   }
 }
+
+// @media (max-width: 1130px) {
+//   section div .imageFrame{
+//     width: fit-content !important;
+//   }
+// }
 
 @media (max-width: 1000px) {
   section div {
